@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Universo em Galeria</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container p-0">
+    <header class="header-container my-3">
+      <div class="header-row">
+        <button class="btn-menu" id="btnOpenCredits" aria-label="Abrir créditos" data-bs-toggle="modal" data-bs-target="#menuModal">
+          <img src="assets/icone_menu.png" alt="Menu">
+        </button>
+        <h1 class="main-title"><strong>UNIVERSO EM GALERIA</strong></h1>
+      </div>
+    </header>
+
+    <main class="container mt-1">
+      <div class="row g-0 category-grid justify-content-center">
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
+          <div class="category-card open-gallery" data-tema="galaxias">
+            <img src="assets/thumb_galaxias.png" alt="Galáxias" loading="eager">
+            <p class="category-title">Galáxias</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
+          <div class="category-card open-gallery" data-tema="estrelas">
+            <img src="assets/thumb_estrelas.png" alt="Estrelas" loading="lazy">
+            <p class="category-title">Estrelas</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
+          <div class="category-card open-gallery" data-tema="sistemas">
+            <img src="assets/thumb_sistemas.png" alt="Sistemas Planetários" loading="lazy">
+            <p class="category-title long-title">Sistemas Planetários</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
+          <div class="category-card open-gallery" data-tema="planetas">
+            <img src="assets/thumb_planetas.png" alt="Planetas" loading="lazy">
+            <p class="category-title">Planetas</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-0 category-grid justify-content-center mt-2">
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
+          <div class="category-card open-gallery" data-tema="satelites">
+            <img src="assets/thumb_satelites.png" alt="Satélites Naturais" loading="eager">
+            <p class="category-title long-title">Satélites Naturais</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
+          <div class="category-card open-gallery" data-tema="corpos">
+            <img src="assets/thumb_corpos.png" alt="Outros Corpos Celestiais" loading="lazy">
+            <p class="category-title long-title">Outros Corpos Celestes</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
+          <div class="category-card open-gallery" data-tema="exploracao">
+            <img src="assets/thumb_explora.png" alt="Observação e Exploração" loading="lazy">
+            <p class="category-title long-title">Observação e Exploração</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal de Créditos -->
+  <div class="modal fade" id="menuModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered custom-popup-dialog">
+      <div class="modal-content custom-popup-content position-relative" style="background: url('assets/img_popup.png') center center / cover no-repeat; border: none; padding: 0;">
+        <button type="button" class="btn-close-custom-styled" data-bs-dismiss="modal" aria-label="Fechar">
+          <img src="assets/icone_fechar.png" alt="Fechar">
+        </button>
+        <div class="modal-body popup-body" style="padding: 0; display: flex; flex-wrap: wrap; min-height: 400px;">
+          <div class="box-wrapper box-wrapper-creditos" style="flex: 1 1 60%; position: relative; padding: 0;">
+            <div style="background: url('assets/img_caixacreditos.png') center center / contain no-repeat; width: 100%; height: 100%; padding: 60px 20px 20px;">
+              <h5 class="custom-popup-title" style="position: absolute; top: 15px; left: 20px; margin: 0;">CRÉDITOS</h5>
+              <div class="popup-caixa popup-caixa-creditos" style="color: #4b0082; overflow-y: auto; max-height: 300px;">
+                <p class="popup-item direitos-autorais">© MVT Educação. Todos os direitos reservados.</p><br>
+                <p class="popup-item creditos-texto-formatado">
+                  <strong class="text-uppercase">Concepção Pedagógica</strong><br>
+                  Ana Cláudia Rocha
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="box-wrapper box-wrapper-utilizar" style="flex: 1 1 40%; position: relative; padding: 0;">
+            <div style="background: url('assets/img_caixautilizar.png') center center / contain no-repeat; width: 100%; height: 100%; padding: 60px 20px 20px;">
+              <h5 class="custom-popup-title" style="position: absolute; top: 15px; left: 20px; margin: 0;">COMO UTILIZAR</h5>
+              <div class="popup-caixa popup-caixa-utilizar" style="color: #4b0082; overflow-y: auto; max-height: 300px;">
+                <p class="popup-subtitle">Navegação Principal</p>
+                <p class="popup-item">Clique nas categorias para abrir a galeria.</p>
+                <p class="popup-subtitle">Navegação na Galeria</p>
+                <p class="popup-item">Use as setas ou teclas do teclado para navegar.</p>
+                <p class="popup-subtitle">Fechamento</p>
+                <p class="popup-item">Clique no <strong>X</strong> ou pressione <strong>ESC</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal da Galeria (NOVO LAYOUT) -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog custom-popup-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="gallery-card">
+
+          <!-- Título -->
+          <div class="card-title-wrapper">
+            <h2 class="card-title">GALÁXIAS</h2>
+          </div>
+
+          <!-- Botão fechar -->
+          <button class="close-btn" data-bs-dismiss="modal" aria-label="Fechar">
+            <img src="assets/icone_fechar.png" alt="Fechar">
+          </button>
+
+          <!-- Imagem -->
+          <div class="image-wrapper">
+            <img id="main-image" src="" alt="Imagem da galeria">
+            <div class="vertical-label"></div>
+          </div>
+
+          <!-- Texto Descritivo (no mesmo lugar da imagem de referência) -->
+          <div class="card-description-wrapper">
+            <p class="card-description">A GALÁXIA DE ANDRÔMEDA É A MAIS MASSIVA DO GRUPO DE GALÁXIAS QUE INCLUI A VIA LÁCTEA. EM ESPIRAL, ESTÁ A 2,5 MILHÕES DE ANOS-LUZ DA TERRA.</p>
+          </div>
+
+          <!-- Setas -->
+          <button class="nav-arrow left" aria-label="Anterior">
+            <img src="assets/icone_anterior.png" alt="Anterior">
+          </button>
+          <button class="nav-arrow right" aria-label="Próximo">
+            <img src="assets/icone_prox.png" alt="Próximo">
+          </button>
+
+          <!-- Logo "ABRE PALAVRA" (imagem) no canto inferior direito -->
+          <img src="assets/img_logo.png" alt="Abre Palavra" class="open-word-logo">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
