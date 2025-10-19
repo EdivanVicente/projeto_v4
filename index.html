@@ -25,7 +25,7 @@
       <div class="row g-0 category-grid justify-content-center">
         <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
           <div class="category-card open-gallery" data-tema="galaxias">
-            <img src="assets/thumb_galaxias.png" alt="Galáxias" loading="eager">
+            <img src="assets/thumb_galaxias.png" alt="Galáxias" loading="lazy">
             <p class="category-title">Galáxias</p>
           </div>
         </div>
@@ -52,7 +52,7 @@
       <div class="row g-0 category-grid justify-content-center mt-2">
         <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
           <div class="category-card open-gallery" data-tema="satelites">
-            <img src="assets/thumb_satelites.png" alt="Satélites Naturais" loading="eager">
+            <img src="assets/thumb_satelites.png" alt="Satélites Naturais" loading="lazy">
             <p class="category-title long-title">Satélites Naturais</p>
           </div>
         </div>
@@ -75,33 +75,69 @@
   <!-- Modal de Créditos -->
   <div class="modal fade" id="menuModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered custom-popup-dialog">
-      <div class="modal-content custom-popup-content position-relative" style="background: url('assets/img_popup.png') center center / cover no-repeat; border: none; padding: 0;">
+      <div class="modal-content custom-popup-content">
         <button type="button" class="btn-close-custom-styled" data-bs-dismiss="modal" aria-label="Fechar">
           <img src="assets/icone_fechar.png" alt="Fechar">
         </button>
-        <div class="modal-body popup-body" style="padding: 0; display: flex; flex-wrap: wrap; min-height: 400px;">
-          <div class="box-wrapper box-wrapper-creditos" style="flex: 1 1 60%; position: relative; padding: 0;">
-            <div style="background: url('assets/img_caixacreditos.png') center center / contain no-repeat; width: 100%; height: 100%; padding: 60px 20px 20px;">
-              <h5 class="custom-popup-title" style="position: absolute; top: 15px; left: 20px; margin: 0;">CRÉDITOS</h5>
-              <div class="popup-caixa popup-caixa-creditos" style="color: #4b0082; overflow-y: auto; max-height: 300px;">
+        <div class="modal-body popup-body">
+          <div class="row popup-row">
+            <div class="col-12 col-md-7 box-wrapper box-wrapper-creditos">
+              <h5 class="custom-popup-title">CRÉDITOS</h5>
+              <div class="popup-caixa popup-caixa-creditos">
                 <p class="popup-item direitos-autorais">© MVT Educação. Todos os direitos reservados.</p><br>
                 <p class="popup-item creditos-texto-formatado">
-                  <strong class="text-uppercase">Concepção Pedagógica</strong><br>
+                  <strong class="text-uppercase">CONCEPÇÃO PEDAGÓGICA E COORDENAÇÃO DE AUTORIA</strong>
                   Ana Cláudia Rocha
+                </p>
+                <p class="popup-item creditos-texto-formatado"> 
+                  <strong class="text-uppercase">GERENTE PEDAGÓGICA EDITORIAL</strong>
+                  Marcela Machado
+                </p>
+                <p class="popup-item creditos-texto-formatado"> 
+                  <strong class="text-uppercase">COORDENADORA PEDAGÓGICA</strong>
+                  Juliana Fraga
+                </p>
+                <p class="popup-item creditos-texto-formatado">
+                  <strong class="text-uppercase">COORDENADORA EDITORIAL</strong>
+                  Juliana Maia
+                </p>
+                <p class="popup-item creditos-texto-formatado creditos-equipe">
+                  <strong class="text-uppercase">EQUIPE EDITORIAL</strong>
+                  Beatriz Rosa, Camila Aguiar, Fernanda Oliveira, Kaio Cassio e Mariane Parra
+                </p>
+                <p class="popup-item creditos-texto-formatado">
+                  <strong class="text-uppercase">COORDENADORA DE PROJETOS DIGITAIS</strong>
+                  Ariane Silvestrini
+                </p>
+                <p class="popup-item creditos-texto-formatado">
+                  <strong class="text-uppercase">EQUIPE DE PROJETOS DIGITAIS</strong>
+                  Toni Santos, Daniela Nascimento
+                </p>
+                <p class="popup-item creditos-texto-formatado">
+                  <strong class="text-uppercase">REVISÃO ORTOGRÁFICA</strong>
+                  Ana Paula de Aquino
+                </p>
+                <p class="popup-item creditos-texto-formatado creditos-producao">
+                  <strong class="text-uppercase">PRODUÇÃO</strong>
+                  Edivan Vicente
                 </p>
               </div>
             </div>
-          </div>
-          <div class="box-wrapper box-wrapper-utilizar" style="flex: 1 1 40%; position: relative; padding: 0;">
-            <div style="background: url('assets/img_caixautilizar.png') center center / contain no-repeat; width: 100%; height: 100%; padding: 60px 20px 20px;">
-              <h5 class="custom-popup-title" style="position: absolute; top: 15px; left: 20px; margin: 0;">COMO UTILIZAR</h5>
-              <div class="popup-caixa popup-caixa-utilizar" style="color: #4b0082; overflow-y: auto; max-height: 300px;">
+            <div class="col-12 col-md-5 box-wrapper box-wrapper-utilizar">
+              <h5 class="custom-popup-title">COMO UTILIZAR</h5>
+              <div class="popup-caixa popup-caixa-utilizar">
                 <p class="popup-subtitle">Navegação Principal</p>
-                <p class="popup-item">Clique nas categorias para abrir a galeria.</p>
+                <p class="popup-item">
+                  Clique nas imagens (Galáxias, Estrelas, etc.) para abrir a galeria de cada tema.
+                </p>
                 <p class="popup-subtitle">Navegação na Galeria</p>
-                <p class="popup-item">Use as setas ou teclas do teclado para navegar.</p>
+                <p class="popup-item">
+                  Use as setas laterais (◀ ▶) ou as teclas de seta do seu teclado para percorrer as imagens do tema.
+                </p>
                 <p class="popup-subtitle">Fechamento</p>
-                <p class="popup-item">Clique no <strong>X</strong> ou pressione <strong>ESC</strong>.</p>
+                <p class="popup-item">
+                  Para sair de qualquer modal, clique no ícone <strong>X</strong> no canto superior direito ou pressione a tecla <strong>ESC</strong>.
+                </p>
               </div>
             </div>
           </div>
@@ -110,48 +146,38 @@
     </div>
   </div>
 
-  <!-- Modal da Galeria (NOVO LAYOUT) -->
-  <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog custom-popup-dialog modal-dialog-centered">
+  <!-- Modal da Galeria -->
+  <div class="modal fade" id="galleryModal" tabindex="-1" aria-modal="true" aria-labelledby="gallery-title">
+    <div class="modal-dialog">
       <div class="modal-content">
         <div class="gallery-card">
-
-          <!-- Título -->
           <div class="card-title-wrapper">
-            <h2 class="card-title">GALÁXIAS</h2>
+            <h2 class="card-title" id="gallery-title"></h2>
           </div>
-
-          <!-- Botão fechar -->
           <button class="close-btn" data-bs-dismiss="modal" aria-label="Fechar">
             <img src="assets/icone_fechar.png" alt="Fechar">
           </button>
-
-          <!-- Imagem -->
           <div class="image-wrapper">
             <img id="main-image" src="" alt="Imagem da galeria">
             <div class="vertical-label"></div>
           </div>
-
-          <!-- Texto Descritivo (no mesmo lugar da imagem de referência) -->
           <div class="card-description-wrapper">
-            <p class="card-description">A GALÁXIA DE ANDRÔMEDA É A MAIS MASSIVA DO GRUPO DE GALÁXIAS QUE INCLUI A VIA LÁCTEA. EM ESPIRAL, ESTÁ A 2,5 MILHÕES DE ANOS-LUZ DA TERRA.</p>
+            <p class="card-description"></p>
           </div>
-
-          <!-- Setas -->
           <button class="nav-arrow left" aria-label="Anterior">
             <img src="assets/icone_anterior.png" alt="Anterior">
           </button>
           <button class="nav-arrow right" aria-label="Próximo">
             <img src="assets/icone_prox.png" alt="Próximo">
           </button>
-
-          <!-- Logo "ABRE PALAVRA" (imagem) no canto inferior direito -->
-          <img src="assets/img_logo.png" alt="Abre Palavra" class="open-word-logo">
-
+          <!-- LOGO REMOVIDO DAQUI -->
         </div>
       </div>
     </div>
   </div>
+
+  <!-- LOGO GLOBAL: visível em todas as telas -->
+  <img src="assets/img_logo.png" alt="Abre Palavra" class="open-word-logo-global">
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
