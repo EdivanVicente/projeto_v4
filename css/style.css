@@ -84,6 +84,7 @@ body {
   flex-direction: column;
 }
 
+
 main {
   flex-grow: 1;
   display: flex;
@@ -221,7 +222,7 @@ button {
 
 .category-title {
   position: absolute;
-  bottom: -25px;
+  bottom: -35px;
   left: 50%;
   transform: translateX(-50%);
   font-weight: bold;
@@ -245,9 +246,10 @@ button {
 }
 
 .category-title.long-title {
-  width: calc(130px * var(--card-scale));
+  width: calc(264px * var(--card-scale));
   font-size: clamp(0.9rem, 1vw + 0.6rem, 1.2rem);
-  bottom: calc(-30px * var(--card-scale));
+  bottom: calc(-50px * var(--card-scale));
+  
 }
 
 /* 📱 Retrato (mobile vertical) */
@@ -295,6 +297,7 @@ button {
     width: 100px;
     font-size: clamp(0.6rem, 1vw + 0.2rem, 0.9rem);
     bottom: calc(-50px * var(--card-scale));
+    left: calc(50% + 0);
   }
 }
 
@@ -320,8 +323,8 @@ button {
   }
 
   .category-title {
-    bottom: calc(-25px * var(--card-scale) + 5px);
-    left: calc(50% + 50px);
+    bottom: calc(-50px * var(--card-scale) + 5px);
+    left: calc(50% + 0);
     transform: translateX(-50%);
     width: 180px;
     font-size: clamp(0.9rem, 1vw + 0.5rem, 1.2rem);
@@ -340,7 +343,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+ background: url('/assets/img_blackout.png') center center / cover no-repeat;
   padding: 0;
   transform: none !important;
 }
