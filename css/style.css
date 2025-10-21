@@ -186,8 +186,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .category-grid-item {
@@ -204,6 +203,7 @@ button {
   margin: 0 auto;
   width: 100%;
   max-width: calc(100% * var(--card-scale));
+  
 }
 
 .category-card:hover,
@@ -246,7 +246,7 @@ button {
 }
 
 .category-title.long-title {
-  width: calc(264px * var(--card-scale));
+  width: calc(254px * var(--card-scale));
   font-size: clamp(0.9rem, 1vw + 0.6rem, 1.2rem);
   bottom: calc(-50px * var(--card-scale));
 }
@@ -277,12 +277,12 @@ button {
 /* 📺 Paisagem (mobile horizontal) */
 @media screen and (orientation: landscape) and (max-width: 900px) {
   .category-grid {
-    gap: 15px;
-    padding: 0 10px;
+   
+    
   }
   
   .category-card {
-    max-width: 200px;
+    max-width: 150px;
     width: 120px;
   }
 
@@ -339,10 +339,11 @@ button {
   }
 
   .category-card {
-    width: 350px;
+    width: 300px;
     max-width: none;
     margin: 0;
     aspect-ratio: var(--category-card-aspect);
+    
   }
 
   .category-grid {
@@ -362,7 +363,7 @@ button {
   }
 
   .category-title.long-title {
-    width: 280px;
+    width: 230px;
     font-size: clamp(1rem, 1vw + 0.7rem, 1.5rem);
     bottom: calc(-60px * var(--card-scale));
   }
