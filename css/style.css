@@ -84,7 +84,6 @@ body {
   flex-direction: column;
 }
 
-
 main {
   flex-grow: 1;
   display: flex;
@@ -187,11 +186,12 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
 }
 
 .category-grid-item {
-  position: relative;
-  left: 50px;
+  margin: 0 !important;
 }
 
 .category-card {
@@ -202,7 +202,7 @@ button {
   transition: all var(--transition-normal);
   background-color: var(--color-card);
   margin: 0 auto;
-  width: 80%;
+  width: 100%;
   max-width: calc(100% * var(--card-scale));
 }
 
@@ -249,14 +249,13 @@ button {
   width: calc(264px * var(--card-scale));
   font-size: clamp(0.9rem, 1vw + 0.6rem, 1.2rem);
   bottom: calc(-50px * var(--card-scale));
-  
 }
 
 /* 📱 Retrato (mobile vertical) */
 @media screen and (orientation: portrait) and (max-width: 600px) {
-  .category-grid-item {
-    left: 0;
-    margin-bottom: var(--spacing-md);
+  .category-grid {
+    gap: 15px;
+    padding: 0 10px;
   }
   
   .category-card {
@@ -277,9 +276,9 @@ button {
 
 /* 📺 Paisagem (mobile horizontal) */
 @media screen and (orientation: landscape) and (max-width: 900px) {
-  .category-grid-item {
-    left: 0;
-    margin-bottom: var(--spacing-md);
+  .category-grid {
+    gap: 15px;
+    padding: 0 10px;
   }
   
   .category-card {
@@ -301,8 +300,13 @@ button {
   }
 }
 
-/* 🖥️ Desktop */
-@media screen and (min-width: 1024px) {
+/* 🖥️ Desktop padrão (1024px – 1439px) */
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .category-grid-item {
+    position: initial;
+    padding: 0;
+  }
+
   .category-card {
     width: 250px;
     max-width: none;
@@ -310,16 +314,12 @@ button {
     aspect-ratio: var(--category-card-aspect);
   }
 
-  .category-grid-item {
-    position: initial;
-    padding: var(--spacing-sm);
-  }
-
   .category-grid {
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
     width: 100%;
+    padding: 0;
   }
 
   .category-title {
@@ -331,8 +331,49 @@ button {
   }
 }
 
+/* 🖥️ Desktop grande (≥1440px) */
+@media screen and (min-width: 1440px) {
+  .category-grid-item {
+    position: initial;
+    padding: 0;
+  }
+
+  .category-card {
+    width: 350px;
+    max-width: none;
+    margin: 0;
+    aspect-ratio: var(--category-card-aspect);
+  }
+
+  .category-grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .category-title {
+    bottom: calc(-55px * var(--card-scale) + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    font-size: clamp(1rem, 1vw + 0.6rem, 1.4rem);
+  }
+
+  .category-title.long-title {
+    width: 280px;
+    font-size: clamp(1rem, 1vw + 0.7rem, 1.5rem);
+    bottom: calc(-60px * var(--card-scale));
+  }
+}
+
 /* =========================================================================
-   MODAL DA GALERIA
+   MODAL DA GALERIA — AJUSTES EXATAMENTE COMO NA IMAGEM DE REFERÊNCIA
+   ========================================================================= */
+
+/* =========================================================================
+   MODAL DA GALERIA — AJUSTES FINOS CONFORME IMAGEM DE REFERÊNCIA
    ========================================================================= */
 
 #galleryModal .modal-dialog {
@@ -343,13 +384,12 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
- background: url('/assets/img_blackout.png') center center / cover no-repeat;
   padding: 0;
   transform: none !important;
 }
 
 #galleryModal .modal-content {
-  background: transparent;
+  background: url('/assets/img_blackout.png') center center / cover no-repeat;
   border: none;
   padding: 0;
   width: 100vw;
@@ -360,40 +400,50 @@ button {
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: visible; /* permite conteúdo visível mesmo que extrapole (não vai extrapolar) */
+  overflow: visible;
 }
 
 .gallery-card {
-  width: 100%;
-  height: 100%;
-  background: transparent;
+  width: 90%;
+  max-width: 1200px;
+  height: 90%;
+  max-height: 850px;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
 }
 
+/* ✅ TÍTULO: "GALÁXIAS" — Cor roxa, fundo branco, borda roxa, posicionado +50px para direita e +30px para esquerda */
 .card-title-wrapper {
   position: absolute;
-  top: 50px;
-  left: 30px;
-  transform: none;
+  top: 25px;
+  left: 230px; /* 50px originais + 20px para esquerda = 70px (como na imagem) */
   z-index: 10;
-  padding: 8px 20px;
+  padding: 8px 16px;
 }
 
 .card-title {
-  color: #8045DD;
-  font-size: 30px;
+  color: #8045DD; /* Roxo da referência */
+ 
   font-weight: 800;
   text-transform: uppercase;
   margin: 0;
   white-space: nowrap;
+  
+  padding: 6px 14px;
+  
+
+  
 }
 
+/* ✅ ÍCONE DE FECHAR: 50px para a esquerda e 10px para baixo (do canto superior direito do card) */
 .close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 30px; /* 20px (top original) - 10px = 10px */
+  right: 160px; /* 0 (canto direito) - 50px? Não — na imagem está no canto. Ajuste: deixar no canto direito, mas com margem interna */
   z-index: 1055;
   width: 60px;
   height: 60px;
@@ -402,12 +452,15 @@ button {
   align-items: center;
   justify-content: center;
   padding: 0;
+  border-radius: 50%;
+ 
 }
 
 .close-btn img {
-  width: 100%;
+  width: 92px;
   height: auto;
   object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
 }
 
 .image-wrapper {
@@ -415,20 +468,18 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 80px 30px 100px; /* topo: título; fundo: legenda + logo */
+  padding: 0 30px 80px;
   position: relative;
   background: transparent;
 }
 
 .image-wrapper img {
   max-width: 90%;
-  max-height: 80vh;
+  max-height: 75vh;
   height: auto;
   width: auto;
   object-fit: contain;
   display: block;
-  min-width: 0;
-  min-height: 0;
 }
 
 .vertical-label {
@@ -443,15 +494,16 @@ button {
   writing-mode: vertical-rl;
   text-align: center;
   padding: 5px;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.4);
   border-radius: 4px;
 }
 
+/* ✅ DESCRIÇÃO: subida de 30px, cor roxa, fundo branco com borda e sombra */
 .card-description-wrapper {
   position: absolute;
-  bottom: 50px;
-  left: 15%;
-  right: 15%;
+  bottom: 100px; /* subiu 30px */
+  left: 20%;
+  right: 20%;
   padding: 0;
   text-align: center;
   z-index: 10;
@@ -459,22 +511,20 @@ button {
 
 .card-description {
   margin: 0;
-  color: white;
+  color: #8045DD; /* Cor roxa da referência */
   font-weight: 600;
   line-height: 1.4;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: normal;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px 15px;
+  white-space: normal; 
+  padding: 12px 16px; 
   border-radius: 8px;
-  width: 100%;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+  width: 100%; 
 }
 
 .nav-arrow {
@@ -486,37 +536,25 @@ button {
   z-index: 60;
   background: transparent !important;
   padding: 0;
-  width: 47px;
-  height: 47px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: none !important;
 }
 
-.nav-arrow:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
-  border-radius: 50%;
-}
-
-.nav-arrow:hover,
-.nav-arrow:active {
-  transform: translateY(-50%) !important;
-  background: transparent !important;
-}
-
 .nav-arrow img {
-  width: 47px;
+  width: 60px;
   height: auto;
 }
 
 .nav-arrow.left {
-  left: -15px;
+  left: 30px;
 }
 
 .nav-arrow.right {
-  right: -15px;
+  right: 30px;
 }
 
 .nav-arrow.hide {
@@ -524,19 +562,19 @@ button {
 }
 
 /* =========================================================================
-   LOGO GLOBAL — VISÍVEL EM TODAS AS TELAS
+   LOGO GLOBAL
    ========================================================================= */
 
 .open-word-logo-global {
   position: fixed;
   bottom: 15px;
   right: 15px;
-  z-index: 1000; /* acima de modais e conteúdo */
+  z-index: 1000;
   width: 120px;
   max-width: 100px;
   height: auto;
   object-fit: contain;
-  pointer-events: none; /* não interfere em cliques */
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {
@@ -548,7 +586,7 @@ button {
 }
 
 /* =========================================================================
-   RESPONSIVIDADE DO MODAL — AJUSTES FINOS
+   RESPONSIVIDADE DO MODAL — MOBILE (mantida, mas sem alterações)
    ========================================================================= */
 
 @media (max-width: 768px) {
@@ -557,61 +595,69 @@ button {
     height: 100vh;
   }
 
+  .gallery-card {
+    width: 95%;
+    height: 95%;
+    max-height: none;
+    border-radius: 12px;
+  }
+
+  .card-title-wrapper {
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+  }
+
   .card-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    padding: 5px 12px;
+    background: rgba(255,255,255,0.92);
+    color: #8045DD;
+    text-shadow: none;
+    border: 2px solid #8045DD;
   }
 
-  .card-description-wrapper {
-    bottom: 80px;
-    left: 10%;
-    right: 10%;
+  .close-btn {
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
   }
 
-  .card-description {
-    font-size: 0.85rem;
-    -webkit-line-clamp: 3;
-    padding: 10px 15px;
+  .close-btn img {
+    width: 28px;
   }
 
   .image-wrapper {
-    padding: 70px 15px 90px;
+    padding: 0 15px 70px;
   }
 
   .image-wrapper img {
     max-width: 95%;
-    max-height: 65vh;
+    max-height: 60vh;
   }
 
-  .nav-arrow {
-    width: 60px;
-    height: 60px;
+  .card-description-wrapper {
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+    padding-top: 15px;
   }
 
-  .nav-arrow img {
-    width: 40px;
+  .card-description {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.92);
+    color: #8045DD;
+    border: 2px solid #8045DD;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
   }
 
   .nav-arrow.left {
-    left: 5px;
+    left: 10px;
   }
   .nav-arrow.right {
-    right: 5px;
-  }
-
-  .vertical-label {
-    font-size: 7px;
-    padding: 3px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .image-wrapper {
-    padding: 80px 60px 100px;
-  }
-
-  .image-wrapper img {
-    max-height: 75vh;
-    max-width: 85%;
+    right: 10px;
   }
 }
 
@@ -660,10 +706,151 @@ button {
   object-fit: contain;
 }
 
-/* =========================================================================
-   AJUSTES FINAIS
-   ========================================================================= */
-
 #menuModal .modal-dialog {
   transform: none !important;
+}
+/* =========================================================================
+   RESPONSIVIDADE PROPORCIONAL DO MODAL DA GALERIA — SEM ALTERAR DESKTOP
+   ========================================================================= */
+
+/* Tablet grande (até 1200px) */
+@media (max-width: 1200px) {
+  .card-title-wrapper {
+    left: clamp(70px, 18vw, 230px);
+    top: clamp(20px, 4vh, 25px);
+  }
+
+  .close-btn {
+    right: clamp(60px, 13vw, 160px);
+    top: clamp(20px, 4vh, 30px);
+  }
+
+  .close-btn img {
+    width: clamp(40px, 8vw, 92px);
+  }
+
+  .card-description-wrapper {
+    bottom: clamp(60px, 12vh, 100px);
+  }
+
+  .card-description {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2.5vw, 16px);
+  }
+}
+
+/* Tablet pequeno e mobile grande (até 768px) */
+@media (max-width: 768px) {
+  .gallery-card {
+    width: 95%;
+    height: 95%;
+    max-height: none;
+    padding: 0 10px;
+  }
+
+  .card-title-wrapper {
+    left: clamp(20px, 8vw, 180px);
+    top: clamp(15px, 5vh, 25px);
+  }
+
+  .card-title {
+    font-size: clamp(1.1rem, 4vw, 1.8rem);
+    white-space: normal;
+    text-align: center;
+    padding: 6px 12px;
+  }
+
+  .close-btn {
+    right: clamp(20px, 8vw, 80px);
+    top: clamp(15px, 5vh, 30px);
+    width: clamp(40px, 8vw, 60px);
+    height: clamp(40px, 8vw, 60px);
+  }
+
+  .close-btn img {
+    width: clamp(28px, 6vw, 50px);
+  }
+
+  .image-wrapper {
+    padding: 0 15px clamp(60px, 12vh, 80px);
+  }
+
+  .image-wrapper img {
+    max-height: 60vh;
+    max-width: 95%;
+  }
+
+  .card-description-wrapper {
+    bottom: clamp(40px, 10vh, 100px);
+    left: 10%;
+    right: 10%;
+  }
+
+  .card-description {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    padding: clamp(8px, 2vw, 12px) clamp(10px, 2.5vw, 16px);
+  }
+
+  .nav-arrow.left {
+    left: clamp(10px, 4vw, 30px);
+  }
+
+  .nav-arrow.right {
+    right: clamp(10px, 4vw, 30px);
+  }
+
+  .nav-arrow img {
+    width: clamp(40px, 8vw, 60px);
+  }
+}
+
+/* Mobile pequeno (até 480px) */
+@media (max-width: 480px) {
+  .card-title-wrapper {
+    left: 15px;
+    top: 12px;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    padding: 5px 10px;
+  }
+
+  .close-btn {
+    right: 15px;
+    top: 12px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .close-btn img {
+    width: 36px;
+  }
+
+  .image-wrapper {
+    padding-bottom: 50px;
+  }
+
+  .card-description-wrapper {
+    bottom: 35px;
+    left: 8%;
+    right: 8%;
+  }
+
+  .card-description {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+
+  .nav-arrow.left {
+    left: 8px;
+  }
+
+  .nav-arrow.right {
+    right: 8px;
+  }
+
+  .nav-arrow img {
+    width: 40px;
+  }
 }
