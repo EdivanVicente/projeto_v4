@@ -1,5 +1,5 @@
 /* ==========================================
-   DESIGN SYSTEM - CSS VARIABLES
+   DESIGN SYSTEM - CSS VARIABLES (BASE)
    ========================================== */
 
 :root {
@@ -107,7 +107,7 @@ button {
 }
 
 /* ==========================================
-   HEADER
+   HEADER - BASE (comum a todas as telas)
    ========================================== */
 
 .header-container {
@@ -149,37 +149,7 @@ button {
 }
 
 /* ==========================================
-   RESPONSIVE - HEADER (MOBILE/PORTRAIT)
-   ========================================== */
-
-@media (max-width: 767px) {
-  .header-container {
-    width: 100%;
-    padding: 10px;
-    height: calc(var(--header-height) - 13px);
-    display: flex;
-    align-items: center;
-  }
-
-  .header-row {
-    gap: 5px;
-  }
-
-  .btn-menu img {
-    width: 45px;
-    height: 45px;
-    padding: 5px;
-    flex-shrink: 0;
-  }
-
-  .main-title {
-    font-size: 1.2rem;
-    margin-left: 10px;
-  }
-}
-
-/* ==========================================
-   MAIN CONTAINER & CATEGORY GRID
+   MAIN CONTAINER & CATEGORY GRID - BASE
    ========================================== */
 
 .category-grid {
@@ -203,7 +173,6 @@ button {
   margin: 0 auto;
   width: 100%;
   max-width: calc(100% * var(--card-scale));
-  
 }
 
 .category-card:hover,
@@ -243,6 +212,7 @@ button {
   font-size: clamp(0.7rem, 1vw + 0.5rem, 1rem);
   width: calc(100px * var(--card-scale));
   min-height: calc(30px * var(--card-scale));
+  
 }
 
 .category-title.long-title {
@@ -251,146 +221,8 @@ button {
   bottom: calc(-50px * var(--card-scale));
 }
 
-/* 📱 Retrato (mobile vertical) */
-@media screen and (orientation: portrait) and (max-width: 600px) {
-  .category-grid {
-    gap: 15px;
-    padding: 0 10px;
-  }
-  
-  .category-card {
-    max-width: 240px;
-  }
-
-  .category-title {
-    width: 150px;
-    font-size: clamp(0.7rem, 1vw + 0.3rem, 1rem);
-    bottom: calc(-40px * var(--card-scale));
-  }
-  .category-title.long-title {
-    width: 140px;
-    font-size: clamp(0.7rem, 1vw + 0.3rem, 1rem);
-    bottom: calc(-40px * var(--card-scale));
-  }
-}
-
-/* 📺 Paisagem (mobile horizontal) */
-@media screen and (orientation: landscape) and (max-width: 900px) {
-  .category-grid {
-   
-    
-  }
-  
-  .category-card {
-    max-width: 150px;
-    width: 120px;
-  }
-
-  .category-title {
-    width: 100px;
-    font-size: clamp(0.4rem, 1vw + 0.4rem, 0.9rem);
-    bottom: calc(-45px * var(--card-scale));
-  }
-
-  .category-title.long-title {
-    width: 100px;
-    font-size: clamp(0.6rem, 1vw + 0.2rem, 0.9rem);
-    bottom: calc(-50px * var(--card-scale));
-    left: calc(50% + 0);
-  }
-}
-
-/* 🖥️ Monitor de 19 polegadas (1024px – 1499px) */
-@media screen and (min-width: 1024px) and (max-width: 1499px) {
-  :root {
-    --card-scale: 0.7; /* Escala para 250px */
-  }
-
-  html, body {
-    overflow: auto;
-  }
-
-  main {
-    overflow: visible;
-    padding-top: 0;
-  }
-
-  .category-grid {
-    margin-top: 0;   
-    padding: 0 20px;
-    justify-content: center;
-    margin-left:50px
-  }
-
-  .category-grid-item {
-    position: initial;
-    padding: 0;
-  }
-
-  .category-card {
-    width: 250px; /* ← Tamanho exato para 19" */
-    max-width: none;
-    margin: 0;
-    aspect-ratio: var(--category-card-aspect);
-  }
-
-  .category-title {
-    bottom: calc(-40px * var(--card-scale) + 5px);
-    width: calc(180px * var(--card-scale));
-    font-size: calc(1.3rem * var(--card-scale));
-  }
-
-  .category-title.long-title {
-    width: calc(204px * var(--card-scale));
-    font-size: calc(1.3rem * var(--card-scale));
-    bottom: calc(-50px * var(--card-scale));
-  }
-
-  .card-description-wrapper {
-    bottom: 100px;
-  }
-}
-
-/* 🖥️ Monitor de 22 polegadas (≥1500px) */
-@media screen and (min-width: 1500px) {
-  .category-grid-item {
-    position: initial;
-    padding: 0;
-  }
-
-  .category-card {
-    width: 320px; /* ← Tamanho exato para 22" */
-    max-width: none;
-    margin: 0;
-    
-    aspect-ratio: var(--category-card-aspect);
-  }
-
-  .category-grid {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1400px;
-    width: 100%;
-    padding: 0;
-  }
-
-  .category-title {
-    bottom: calc(-55px * var(--card-scale) + 5px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 220px;
-    font-size: clamp(1rem, 1vw + 0.6rem, 1.4rem);
-  }
-
-  .category-title.long-title {
-    width: 230px;
-    font-size: clamp(1rem, 1vw + 0.7rem, 1.5rem);
-    bottom: calc(-60px * var(--card-scale));
-  }
-}
-
 /* =========================================================================
-   MODAL DA GALERIA — AJUSTES EXATAMENTE COMO NA IMAGEM DE REFERÊNCIA
+   MODAL DA GALERIA — BASE (comum a todas as telas)
    ========================================================================= */
 
 #galleryModal .modal-dialog {
@@ -433,12 +265,59 @@ button {
   box-shadow: var(--shadow-lg);
 }
 
+.image-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px 80px;
+  background: transparent;
+}
+
+.image-wrapper img {
+  max-width: 90%;
+  max-height: 75vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.card-description-wrapper {
+  position: absolute;
+  bottom: 100px;
+  left: 20%;
+  right: 20%;
+  padding: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.card-description {
+  margin: 0;
+  color: #8045DD;
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; 
+  padding: 12px 16px; 
+  border-radius: 8px;
+  width: 100%; 
+}
+
 .card-title-wrapper {
   position: absolute;
   top: 25px;
   left: 230px;
   z-index: 10;
   padding: 8px 16px;
+  
 }
 
 .card-title {
@@ -472,67 +351,25 @@ button {
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
 }
 
-.image-wrapper {
-  flex: 1;
+/* Ícone de fechar no modal de créditos */
+.btn-close-custom-styled {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 60px;
+  height: 60px;
+  background: none;
+  border: none;
+  z-index: 1050;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 30px 80px;
-  position: relative;
-  background: transparent;
 }
 
-.image-wrapper img {
-  max-width: 90%;
-  max-height: 75vh;
-  height: auto;
-  width: auto;
+.btn-close-custom-styled img {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  display: block;
-}
-
-.vertical-label {
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%) rotate(90deg);
-  color: white;
-  font-size: 8px;
-  opacity: 0.8;
-  z-index: 5;
-  writing-mode: vertical-rl;
-  text-align: center;
-  padding: 5px;
-  background: rgba(0,0,0,0.4);
-  border-radius: 4px;
-}
-
-.card-description-wrapper {
-  position: absolute;
-  bottom: 100px;
-  left: 20%;
-  right: 20%;
-  padding: 0;
-  text-align: center;
-  z-index: 10;
-}
-
-.card-description {
-  margin: 0;
-  color: #8045DD;
-  font-weight: 600;
-  line-height: 1.4;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: normal; 
-  padding: 12px 16px; 
-  border-radius: 8px;
-  width: 100%; 
 }
 
 .nav-arrow {
@@ -570,7 +407,350 @@ button {
 }
 
 /* =========================================================================
-   LOGO GLOBAL
+   RÓTULO VERTICAL — ESTILO PADRÃO (CRÉDITOS CURTOS)
+   ========================================================================= */
+
+.vertical-label {
+  position: absolute;
+  color: white;
+  opacity: 0.85;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 8px;
+  font-weight: 600;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
+  max-width: 180px;
+  line-height: 1.3;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 70;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+}
+
+/* =========================================================================
+   RÓTULO VERTICAL — ESTILO PARA CRÉDITOS LONGOS (COMO NA SUA IMAGEM)
+   ========================================================================= */
+
+.vertical-label.long-credit {
+  background: none;
+  padding: 2px 4px;
+  font-size: 6px;
+  max-width: 220px;
+  line-height: 1.2;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  border: none;
+}
+
+/* =============================================================================
+   📱 MOBILE PORTRAIT (até 600px, orientation: portrait)
+   ============================================================================= */
+
+@media screen and (orientation: portrait) and (max-width: 600px) {
+  /* Header */
+  .header-container {
+    width: 100%;
+    padding: 10px;
+    height: calc(var(--header-height) - 13px);
+    display: flex;
+    align-items: center;
+  }
+  .header-row { gap: 5px; }
+  .btn-menu img { width: 45px; height: 45px; padding: 5px; flex-shrink: 0; }
+  .main-title { font-size: 1.2rem; margin-left: 10px; }
+
+  /* Grid */
+  .category-grid {
+    gap: 15px;
+    padding: 0 10px;
+    margin-top: 15px;
+  }
+  .category-card { max-width: 240px; }
+  .category-title {
+    width: 150px;
+    font-size: clamp(0.7rem, 1vw + 0.3rem, 1rem);
+    bottom: calc(-40px * var(--card-scale));
+  }
+  .category-title.long-title {
+    width: 140px;
+    font-size: clamp(0.7rem, 1vw + 0.3rem, 1rem);
+    bottom: calc(-40px * var(--card-scale));
+  }
+
+  /* Modal Gallery */
+  #galleryModal .modal-content { width: 100vw; height: 100vh; }
+  .gallery-card { width: 95%; height: 95%; max-height: none; border-radius: 12px; }
+  .card-title-wrapper { top: 12px; left: 12px; padding: 6px 12px; }
+  .card-title {
+    font-size: 1.3rem;
+    padding: 5px 12px;
+    background: rgba(255,255,255,0.92);
+    color: #8045DD;
+    text-shadow: none;
+    border: 2px solid #8045DD;
+  }
+  .close-btn { top: 10px; right: 10px; width: 50px; height: 50px; }
+  .close-btn img { width: 28px; }
+  .btn-close-custom-styled { top: -15px; right: -15px; width: 50px; height: 50px; }
+  .btn-close-custom-styled img { width: 28px; }
+  .image-wrapper { padding: 0 15px 70px; }
+  .image-wrapper img { max-width: 95%; max-height: 60vh; }
+  .card-description-wrapper { bottom: 0; left: 10%; right: 10%; padding-top: 15px; }
+  .card-description {
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    background: rgba(255,255,255,0.92);
+    color: #8045DD;
+    border: 2px solid #8045DD;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+    width: 100%;
+ 
+  }
+  .nav-arrow.left { left: 10px; }
+  .nav-arrow.right { right: 10px; }
+
+  /* Vertical Label */
+  .vertical-label {
+    bottom: 400px;
+    right: 60px;
+    font-size: 7px;
+    max-width: 120px;
+  }
+  .vertical-label.long-credit {
+    font-size: 5px;
+    max-width: 150px;
+  }
+
+  /* Logo */
+  .open-word-logo-global {
+    width: 80px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
+/* =============================================================================
+   📺 MOBILE LANDSCAPE (até 900px, orientation: landscape)
+   ============================================================================= */
+
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  /* Scroll & Layout */
+  html, body { overflow: hidden; height: 100%; }
+  main { overflow: hidden; height: 100%; display: flex; align-items: center; }
+
+  /* Grid */
+  .category-grid {
+    margin-top: -50px;
+  }
+  .category-card { max-width: 150px; width: 120px; }
+  .category-title {
+    width: 100px;
+    font-size: clamp(0.4rem, 1vw + 0.4rem, 0.9rem);
+    bottom: calc(-45px * var(--card-scale));
+  }
+  .category-title.long-title {
+    width: 100px;
+    font-size: clamp(0.6rem, 1vw + 0.2rem, 0.9rem);
+    bottom: calc(-50px * var(--card-scale));
+    left: calc(50% + 0);
+  }
+
+  /* Modal Gallery */
+  .close-btn { top: 10px; right: 10px; width: 45px; height: 45px; }
+  .close-btn img { width: 25px; }
+  .btn-close-custom-styled { top: -15px; right: -15px; width: 45px; height: 45px; }
+  .btn-close-custom-styled img { width: 25px; }
+  .card-description {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    width: 90%;
+    
+  }
+  .card-description-wrapper { bottom: 0; left: 12%; right: 12%; }
+
+  /* Vertical Label */
+  .vertical-label {
+    bottom: 260px;
+    right: 205px;
+    font-size: 7px;
+    max-width: 140px;
+  }
+  .vertical-label.long-credit {
+    font-size: 5px;
+    max-width: 160px;
+  }
+
+}
+
+/* =============================================================================
+   🖥️ DESKTOP 19 POLEGADAS (1024px – 1499px)
+   ============================================================================= */
+
+@media screen and (min-width: 1024px) and (max-width: 1499px) {
+  /* Scroll */
+  html, body { overflow: auto; }
+  main {
+    overflow: visible;
+    padding-top: 0;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Grid */
+  .category-grid {
+    margin-top: 0;
+    padding: 0 20px;
+    justify-content: center;
+    margin-left: 50px;
+  }
+  .category-grid-item { position: initial; padding: 0; }
+  .category-card {
+    width: 250px;
+    max-width: none;
+    margin: 0;
+    aspect-ratio: var(--category-card-aspect);
+  }
+  .category-title {
+    bottom: calc(-40px * var(--card-scale) + 5px);
+    width: calc(180px * var(--card-scale));
+    font-size: calc(1.3rem * var(--card-scale));
+  }
+  .category-title.long-title {
+    width: calc(204px * var(--card-scale));
+    font-size: calc(1.3rem * var(--card-scale));
+    bottom: calc(-50px * var(--card-scale));
+  }
+
+  /* Modal */
+  .close-btn { top: 25px; right: 140px; width: 55px; height: 55px; }
+  .close-btn img { width: 80px; }
+  .btn-close-custom-styled { top: -18px; right: -18px; width: 55px; height: 55px; }
+  .btn-close-custom-styled img { width: 80px; }
+  .card-description-wrapper { bottom: 100px; }
+  .card-description {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+    width: 85%;
+    border: 1px solid red;
+    margin-left: 50px;
+    
+  }
+
+  /* Vertical Label */
+  .vertical-label {
+    bottom: 530px;
+    right: 340px;
+    font-size: 8px;
+    max-width: 180px;
+  }
+  .vertical-label.long-credit {
+    font-size: 6px;
+    max-width: 220px;
+  }
+}
+
+/* =============================================================================
+   🖥️ DESKTOP 22 POLEGADAS (≥1500px)
+   ============================================================================= */
+
+@media screen and (min-width: 1500px) {
+  /* Scroll & Layout */
+  html, body { overflow: hidden; height: 100%; }
+  main {
+    padding-top: 15px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Grid */
+  .category-grid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1400px;
+    width: 100%;
+    padding: 0;
+    margin-top: -95px;
+  }
+  .category-grid-item { position: initial; padding: 0; }
+  .category-card {
+    width: 320px;
+    max-width: none;
+    margin: 0;
+    aspect-ratio: var(--category-card-aspect);
+  }
+  .category-title {
+    bottom: calc(-55px * var(--card-scale) + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    font-size: clamp(1rem, 1vw + 0.6rem, 1.4rem);
+  }
+  .category-title.long-title {
+    width: 230px;
+    font-size: clamp(1rem, 1vw + 0.7rem, 1.5rem);
+    bottom: calc(-60px * var(--card-scale));
+  }
+
+  /* Modal */
+  .close-btn { top: 35px; right: 170px; width: 65px; height: 65px; }
+  .close-btn img { width: 100px; }
+  .btn-close-custom-styled { top: -22px; right: -22px; width: 65px; height: 65px; }
+  .btn-close-custom-styled img { width: 100px; }
+  .card-description-wrapper { bottom: 115px; }
+  .card-description {
+    font-size: 1.15rem;
+    padding: 14px 18px;
+    width: 100%;
+    
+  }
+
+  /* Vertical Label */
+  .vertical-label {
+    bottom: 670px;
+    right: 260px;
+    max-width: 180px;
+  }
+  .vertical-label.long-credit {
+    font-size: 6px;
+    max-width: 220px;
+  }
+}
+
+/* =============================================================================
+   📱 EXTRA: Telas muito pequenas (ex: iPhone SE)
+   ============================================================================= */
+
+@media screen and (max-height: 500px) and (orientation: portrait) {
+  .vertical-label {
+    bottom: 260px;
+    right: 60px;
+    font-size: 6px;
+    max-width: 100px;
+  }
+  .vertical-label.long-credit {
+    font-size: 5px;
+    max-width: 120px;
+  }
+  .close-btn { top: 8px; right: 8px; width: 45px; height: 45px; }
+  .close-btn img { width: 24px; }
+  .btn-close-custom-styled { top: -12px; right: -12px; width: 45px; height: 45px; }
+  .btn-close-custom-styled img { width: 24px; }
+  .card-description {
+    font-size: 0.8rem;
+    padding: 8px 12px;
+    
+  }
+}
+
+/* =========================================================================
+   LOGO GLOBAL — BASE
    ========================================================================= */
 
 .open-word-logo-global {
@@ -585,92 +765,8 @@ button {
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
-  .open-word-logo-global {
-    width: 80px;
-    bottom: 10px;
-    right: 10px;
-  }
-}
-
 /* =========================================================================
-   RESPONSIVIDADE DO MODAL — MOBILE (mantida, mas sem alterações)
-   ========================================================================= */
-
-@media (max-width: 768px) {
-  #galleryModal .modal-content {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .gallery-card {
-    width: 95%;
-    height: 95%;
-    max-height: none;
-    border-radius: 12px;
-  }
-
-  .card-title-wrapper {
-    top: 12px;
-    left: 12px;
-    padding: 6px 12px;
-  }
-
-  .card-title {
-    font-size: 1.3rem;
-    padding: 5px 12px;
-    background: rgba(255,255,255,0.92);
-    color: #8045DD;
-    text-shadow: none;
-    border: 2px solid #8045DD;
-  }
-
-  .close-btn {
-    top: 10px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .close-btn img {
-    width: 28px;
-  }
-
-  .image-wrapper {
-    padding: 0 15px 70px;
-  }
-
-  .image-wrapper img {
-    max-width: 95%;
-    max-height: 60vh;
-  }
-
-  .card-description-wrapper {
-    bottom: 0;
-    left: 10%;
-    right: 10%;
-    padding-top: 15px;
-  }
-
-  .card-description {
-    font-size: 0.85rem;
-    padding: 10px 14px;
-    background: rgba(255,255,255,0.92);
-    color: #8045DD;
-    border: 2px solid #8045DD;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-  }
-
-  .nav-arrow.left {
-    left: 10px;
-  }
-  .nav-arrow.right {
-    right: 10px;
-  }
-}
-
-/* =========================================================================
-   MODAL DE CRÉDITOS
+   MODAL DE CRÉDITOS — BASE
    ========================================================================= */
 
 .custom-popup-dialog {
@@ -694,252 +790,6 @@ button {
   padding: 40px !important;
 }
 
-.btn-close-custom-styled {
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 60px;
-  height: 60px;
-  background: none;
-  border: none;
-  z-index: 1050;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-close-custom-styled img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 #menuModal .modal-dialog {
   transform: none !important;
-}
-
-/* =========================================================================
-   RESPONSIVIDADE PROPORCIONAL DO MODAL DA GALERIA — SEM ALTERAR DESKTOP
-   ========================================================================= */
-
-@media (max-width: 1200px) {
-  .card-title-wrapper {
-    left: clamp(70px, 18vw, 230px);
-    top: clamp(20px, 4vh, 25px);
-  }
-
-  .close-btn {
-    right: clamp(60px, 13vw, 160px);
-    top: clamp(20px, 4vh, 30px);
-  }
-
-  .close-btn img {
-    width: clamp(40px, 8vw, 92px);
-  }
-
-  .card-description-wrapper {
-    bottom: clamp(60px, 12vh, 100px);
-  }
-
-  .card-description {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
-    padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2.5vw, 16px);
-  }
-}
-
-@media (max-width: 768px) {
-  .gallery-card {
-    width: 95%;
-    height: 95%;
-    max-height: none;
-    padding: 0 10px;
-  }
-
-  .card-title-wrapper {
-    left: clamp(20px, 8vw, 180px);
-    top: clamp(15px, 5vh, 25px);
-  }
-
-  .card-title {
-    font-size: clamp(1.1rem, 4vw, 1.8rem);
-    white-space: normal;
-    text-align: center;
-    padding: 6px 12px;
-  }
-
-  .close-btn {
-    right: clamp(20px, 8vw, 80px);
-    top: clamp(15px, 5vh, 30px);
-    width: clamp(40px, 8vw, 60px);
-    height: clamp(40px, 8vw, 60px);
-  }
-
-  .close-btn img {
-    width: clamp(28px, 6vw, 50px);
-  }
-
-  .image-wrapper {
-    padding: 0 15px clamp(60px, 12vh, 80px);
-  }
-
-  .image-wrapper img {
-    max-height: 60vh;
-    max-width: 95%;
-  }
-
-  .card-description-wrapper {
-    bottom: clamp(40px, 10vh, 100px);
-    left: 10%;
-    right: 10%;
-  }
-
-  .card-description {
-    font-size: clamp(0.75rem, 3vw, 1rem);
-    padding: clamp(8px, 2vw, 12px) clamp(10px, 2.5vw, 16px);
-  }
-
-  .nav-arrow.left {
-    left: clamp(10px, 4vw, 30px);
-  }
-
-  .nav-arrow.right {
-    right: clamp(10px, 4vw, 30px);
-  }
-
-  .nav-arrow img {
-    width: clamp(40px, 8vw, 60px);
-  }
-}
-
-@media (max-width: 480px) {
-  .card-title-wrapper {
-    left: 15px;
-    top: 12px;
-  }
-
-  .card-title {
-    font-size: 1.2rem;
-    padding: 5px 10px;
-  }
-
-  .close-btn {
-    right: 15px;
-    top: 12px;
-    width: 48px;
-    height: 48px;
-  }
-
-  .close-btn img {
-    width: 36px;
-  }
-
-  .image-wrapper {
-    padding-bottom: 50px;
-  }
-
-  .card-description-wrapper {
-    bottom: 35px;
-    left: 8%;
-    right: 8%;
-  }
-
-  .card-description {
-    font-size: 0.75rem;
-    padding: 8px 12px;
-  }
-
-  .nav-arrow.left {
-    left: 8px;
-  }
-
-  .nav-arrow.right {
-    right: 8px;
-  }
-
-  .nav-arrow img {
-    width: 40px;
-  }
-}
-
-/* ==========================================
-   AJUSTES ESPECÍFICOS CONFORME SOLICITAÇÃO — CORRIGIDO
-   ========================================== */
-
-/* 
-   1. DESKTOP 22 POLEGADAS (≥1500px)
-   - Remove scroll
-   - Ajusta posicionamento
-*/
-@media screen and (min-width: 1500px) {
-  html, body {
-    overflow: hidden;
-    height: 100%;
-  }
-
-  main {
-    padding-top: 15px;
-    overflow: hidden;
-  }
-
-  .category-grid {
-    margin-top: -95px;
-  }
-
-  .card-description-wrapper {
-    bottom: 95px;
-  }
-}
-
-/* 
-   2. LANDSCAPE MOBILE (até 900px)
-   - Remove scroll
-   - Sobe category-grid em 15px
-*/
-@media screen and (orientation: landscape) and (max-width: 900px) {
-  html, body {
-    overflow: hidden;
-    height: 100%;
-  }
-
-  .category-grid {
-    margin-top: -50px;
-  }
-
-  main {
-    overflow: hidden;
-  }
-}
-
-/* 
-   3. MOBILE PORTRAIT (até 600px)
-   - BAIXA category-grid em 15px (afasta do header)
-   - Mantém scroll normal
-*/
-@media screen and (orientation: portrait) and (max-width: 600px) {
-  .category-grid {
-    margin-top: 15px;
-  }
-}
-
-/*
-   4. REVERTER QUALQUER ALTERAÇÃO ACIDENTAL EM 19 POLEGADAS (1024px–1499px)
-   Garantimos comportamento padrão com scroll e posicionamento neutro.
-*/
-@media screen and (min-width: 1024px) and (max-width: 1499px) {
-  html, body {
-    overflow: auto;
-  }
-
-  main {
-    overflow: visible;
-    padding-top: 0;
-  }
-
-  .category-grid {
-    margin-top: 0;
-  }
-
-  .card-description-wrapper {
-    bottom: 100px;
-  }
 }

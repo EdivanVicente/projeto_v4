@@ -24,7 +24,7 @@
     <main class="container">
       <div class="row category-grid mb-5 justify-content-center">
         <div class="col-12 col-sm-3 col-md-3 col-lg-3 category-grid-item">
-          <div class="category-card  open-gallery" data-tema="galaxias">
+          <div class="category-card open-gallery" data-tema="galaxias">
             <img src="assets/thumb_galaxias.png" alt="Galáxias" loading="lazy">
             <p class="category-title">Galáxias</p>
           </div>
@@ -150,11 +150,10 @@
   <div class="modal fade" id="galleryModal" tabindex="-1" aria-modal="true" aria-labelledby="gallery-title">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="gallery-card">
+        <div class="gallery-card" role="dialog" aria-modal="true" aria-labelledby="gallery-title">
           <div class="card-title-wrapper">
             <h2 class="card-title" id="gallery-title"></h2>
           </div>
-          <!-- ✅ close-btn MOVIDO PARA DENTRO DO gallery-card -->
           <button class="close-btn" data-bs-dismiss="modal" aria-label="Fechar">
             <img src="assets/icone_fechar.png" alt="Fechar">
           </button>

@@ -1,4 +1,4 @@
-// Dados das galerias — DO ANTIGO (completo!)
+// Dados das galerias
 const galleryData = {
   galaxias: {
     title: "GALÁXIAS",
@@ -36,12 +36,12 @@ const galleryData = {
       { src: "assets/img_g4f3_v2.png", caption: "IMAGEM DE VÊNUS, CAPTURADA PELA SONDA ESPACIAL MARINER 10. MAS, AO CONTRÁRIO DE SUA APARÊNCIA SERENA, VÊNUS É TOMADO POR CALOR INTENSO, PRESSÃO ATMOSFÉRICA AVASSALADORA E NUVENS DE ÁCIDO CORROSIVO.", credit: "NASA/JPL-Caltech" },
       { src: "assets/img_g4f4_v2.png", caption: "NOSSO VIZINHO MARTE, EM IMAGEM CAPTURADA PELO TELESCÓPIO ESPACIAL HUBBLE.", credit: "NASA / The Hubble Heritage Team (STScI/AURA) / J. Bell (Cornell U.), P. James (U. Toledo), M. Wolff (SSI), A. Lubenow (STScI), J. Neubert (MIT/Cornell)" },
       { src: "assets/img_g4f5_v2.png", caption: "JÚPITER, O MAIOR PLANETA DO SISTEMA SOLAR. IMAGEM CAPTADA PELO TELESCÓPIO ESPACIAL JAMES WEBB.", credit: "NASA, ESA, CSA, STScI, R. Hueso (University of the Basque Country), I. de Pater (University of California, Berkeley), T. Fouchet (Observatory of Paris), L. Fletcher (University of Leicester), M. Wong (University of California, Berkeley), J. DePasquale (STScI)" },
-      { src: "assets/img_g4f6_v2.png", caption: "SATURNO E SEUS ANÉIS, COM IMAGENS CAPTURADAS PELO TELESCÓPIO ESPACIAL JAMES WEBB.", credit: "NASA, ESA, CSA, STScI, Matt Tiscareno (SETI Institute), Matt Hedman (University of Idaho), Maryame El Moutamid (Cornell University), Mark Showalter (SETI Institute), Leigh Fletcher (University of Leicester), Heidi Hammel (AURA). Processamento de Imagem: J. DePasquale (STScI) / Flickr" },
+      { src: "assets/img_g4f6_v2.png", caption: "SATURNO E SEUS ANÉIS, COM IMAGENS CAPTURADAS PELO TELESCÓPIO ESPACIAL JAMES WEBB.", credit: "NASA, ESA, CSA, STScI, Matt Tiscareno (SETI Institute), Matt Hedman (University of Idaho), Maryame El Moutamid (Cornell University), Mark Showalter (SETI Institute), Leigh Fletcher (University of Leicester), Heidi Hammel (AURA). Processamento de Imagem: J. DePasquale (STSci) / Flickr" },
       { src: "assets/img_g4f7_v2.png", caption: "URANO É FRIO E VENTOSO. O GIGANTE GELADO É CERCADO POR 13 ANÉIS E 28 PEQUENAS LUAS. IMAGEM CAPTURADA PELO TELESCÓPIO ESPACIAL JAMES WEBB.", credit: "NASA, ESA, CSA, STScI / Processamento de imagem: Joseph DePasquale (STSci)" },
       { src: "assets/img_g4f8_v2.png", caption: "O PLANETA NETUNO ESTÁ 30 VEZES MAIS DISTANTE DO SOL DO QUE A TERRA. IMAGEM CAPTURADA PELO TELESCÓPIO ESPACIAL JAMES WEBB.", credit: "NASA, ESA, CSA, STScI / Flickr" },
       { src: "assets/img_g4f9_v2.png", caption: "PLUTÃO JÁ FOI CONSIDERADO O NONO PLANETA DE NOSSO SISTEMA E EM 2006 FOI RECLASSIFICADO COMO UM PLANETA-ANÃO, APÓS DESCOBRIREM OUTROS PLANETAS NA MESMA REGIÃO.", credit: "NASA/JHUAPL/SwRI" },
       { src: "assets/img_g4f10_v2.png", caption: "CERES É O ÚNICO PLANETA-ANÃO QUE ESTÁ NO SISTEMA SOLAR INTERNO. ELE FICA LOCALIZADO NO CINTURÃO DE ASTEROIDES ENTRE MARTE E JÚPITER.", credit: "NASA/JPL-Caltech/UCLA/MPS/DLR/IDA" },
-      { src: "assets/img_g4f11_v2v.png", caption: "O EXOPLANETA GJ 504B TEM CERCA DE QUATRO VEZES A MASSA DE JÚPITER, SUA ESTRELA É PARECIDA COM O SOL E ESTÁ A 57 ANOS-LUZ DE DISTÂNCIA DA TERRA.", credit: "NASA/Goddard/S. Wiessinger" },
+      { src: "assets/img_g4f11_v2.png", caption: "O EXOPLANETA GJ 504B TEM CERCA DE QUATRO VEZES A MASSA DE JÚPITER, SUA ESTRELA É PARECIDA COM O SOL E ESTÁ A 57 ANOS-LUZ DE DISTÂNCIA DA TERRA.", credit: "NASA/Goddard/S. Wiessinger" },
       { src: "assets/img_g4f12_v2.png", caption: "O EXOPLANETA SUPER-TERRA 55 CANCRI E, REPRESENTADO COM SUA ESTRELA NESTA CONCEPÇÃO ARTÍSTICA, PROVAVELMENTE TEM UMA ATMOSFERA MAIS ESPESSA QUE A DA TERRA, DE ACORDO COM UM ESTUDO DE 2017.", credit: "NASA/JPL-Caltech" }
     ]
   },
@@ -80,7 +80,6 @@ const galleryData = {
 let currentTheme = null;
 let currentIndex = 0;
 
-// Função para pré-carregar imagens adjacentes
 function preloadAdjacentImages(theme, index) {
   if (!galleryData[theme]) return;
   const images = galleryData[theme].images;
@@ -91,7 +90,6 @@ function preloadAdjacentImages(theme, index) {
   if (prev >= 0) new Image().src = images[prev].src;
 }
 
-// Atualizar galeria
 function updateGallery() {
   if (!currentTheme) return;
   
@@ -103,9 +101,25 @@ function updateGallery() {
   document.getElementById('main-image').alt = item.caption.split('.')[0] || themeData.title;
   document.getElementById('gallery-title').textContent = themeData.title;
   
-  const captionText = item.caption + (item.credit ? '<br><small>Fonte: ' + item.credit + '</small>' : '');
-  document.querySelector('.card-description').innerHTML = captionText;
-  document.querySelector('.vertical-label').textContent = item.credit || '';
+  // Legendas
+  document.querySelector('.card-description').textContent = item.caption;
+  
+  // Crédito no rótulo vertical
+  const verticalLabel = document.querySelector('.vertical-label');
+  console.log('Atualizando rótulo com crédito:', item.credit); // 👈 Log de depuração
+  verticalLabel.textContent = item.credit || '';
+  
+  // Força reflow para garantir que o layout seja recalculado
+  verticalLabel.style.display = 'none';
+  verticalLabel.offsetHeight; // trigger reflow
+  verticalLabel.style.display = 'block';
+
+  // Adiciona classe 'long-credit' se o crédito for longo
+  if (item.credit && item.credit.length > 50) {
+    verticalLabel.classList.add('long-credit');
+  } else {
+    verticalLabel.classList.remove('long-credit');
+  }
 
   // Controle de setas
   const leftArrow = document.querySelector('.nav-arrow.left');
@@ -119,11 +133,9 @@ function updateGallery() {
     rightArrow.classList.toggle('hide', currentIndex === themeData.images.length - 1);
   }
 
-  // Pré-carregar próximas
   preloadAdjacentImages(currentTheme, currentIndex);
 }
 
-// Navegação SEM LOOP
 function goToPrev() {
   if (!currentTheme) return;
   const themeData = galleryData[currentTheme];
@@ -144,7 +156,6 @@ function goToNext() {
   }
 }
 
-// Eventos
 document.querySelectorAll('.open-gallery').forEach(card => {
   card.addEventListener('click', () => {
     const tema = card.dataset.tema;
@@ -157,10 +168,14 @@ document.querySelectorAll('.open-gallery').forEach(card => {
   });
 });
 
-document.querySelector('.nav-arrow.left').addEventListener('click', goToPrev);
-document.querySelector('.nav-arrow.right').addEventListener('click', goToNext);
+document.body.addEventListener('click', (e) => {
+  if (e.target.closest('.nav-arrow.left')) {
+    goToPrev();
+  } else if (e.target.closest('.nav-arrow.right')) {
+    goToNext();
+  }
+});
 
-// Teclado
 document.addEventListener('keydown', (e) => {
   const galleryModal = document.getElementById('galleryModal');
   if (!galleryModal.classList.contains('show')) return;
@@ -171,6 +186,5 @@ document.addEventListener('keydown', (e) => {
     goToNext();
   } else if (e.key === 'Escape') {
     bootstrap.Modal.getInstance(galleryModal)?.hide();
-    bootstrap.Modal.getInstance(document.getElementById('menuModal'))?.hide();
   }
 });
