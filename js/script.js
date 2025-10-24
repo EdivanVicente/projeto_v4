@@ -96,6 +96,7 @@ function updateGallery() {
   const themeData = galleryData[currentTheme];
   const item = themeData.images[currentIndex];
   
+  
   // Atualiza elementos
   document.getElementById('main-image').src = item.src;
   document.getElementById('main-image').alt = item.caption.split('.')[0] || themeData.title;
@@ -103,7 +104,14 @@ function updateGallery() {
   
   // Legendas
   document.querySelector('.card-description').textContent = item.caption;
-  
+  const descriptionWrapper = document.querySelector('.card-description-wrapper');
+
+  if (item.caption && item.caption.length > 150) {
+    descriptionWrapper.classList.add('long-description');
+  } else {
+    descriptionWrapper.classList.remove('long-description');
+  }
+
   // Crédito no rótulo vertical
   const verticalLabel = document.querySelector('.vertical-label');
   console.log('Atualizando rótulo com crédito:', item.credit); // 👈 Log de depuração
@@ -115,12 +123,16 @@ function updateGallery() {
   verticalLabel.style.display = 'block';
 
   // Adiciona classe 'long-credit' se o crédito for longo
-  if (item.credit && item.credit.length > 50) {
-    verticalLabel.classList.add('long-credit');
-  } else {
-    verticalLabel.classList.remove('long-credit');
-  }
-
+ if (item.credit && item.credit.length > 150) {
+  verticalLabel.classList.add('extra-long-credit');
+  verticalLabel.classList.remove('long-credit');
+} else if (item.credit && item.credit.length > 45) {
+  verticalLabel.classList.add('long-credit');
+  verticalLabel.classList.remove('extra-long-credit');
+} else {
+  verticalLabel.classList.remove('long-credit');
+  verticalLabel.classList.remove('extra-long-credit');
+}
   // Controle de setas
   const leftArrow = document.querySelector('.nav-arrow.left');
   const rightArrow = document.querySelector('.nav-arrow.right');
