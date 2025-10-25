@@ -119,7 +119,6 @@ button {
   display: flex;
   align-items: center;
   margin-left: 15px;
-
 }
 
 .header-row {
@@ -136,7 +135,6 @@ button {
   border-radius: 50%;
   padding: 5px;
   flex-shrink: 0;
-
 }
 
 .main-title {
@@ -156,7 +154,6 @@ button {
   gap: 15px;
   padding: 0 10px;
   margin-top: 15px;
-  
 }
 
 .category-grid-item {
@@ -213,7 +210,6 @@ button {
   font-size: clamp(0.7rem, 1vw + 0.3rem, 1rem);
   width: 150px;
   min-height: calc(30px * var(--card-scale));
-  
 }
 
 .category-title.long-title {
@@ -227,7 +223,7 @@ button {
   margin: 0;
   max-width: 100%;
   width: 100%;
-  height: 100%; /* ← importante */
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -240,7 +236,7 @@ button {
   border: none;
   padding: 0;
   width: 100vw;
-  height: 100%; /* ← NÃO use 100vh */
+  height: 100%;
   max-width: none;
   max-height: none;
   display: flex;
@@ -256,8 +252,8 @@ button {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  position: relative; /* ← ESSENCIAL */
-  overflow: visible;  /* ← temporariamente visível para ajuste */
+  position: relative;
+  overflow: visible;
   box-shadow: var(--shadow-lg);
 }
 
@@ -269,7 +265,6 @@ button {
   justify-content: center;
   padding: 0 15px 70px;
   background: transparent;
-  
 }
 
 .image-wrapper img {
@@ -283,14 +278,12 @@ button {
 
 .card-description-wrapper {
   position: absolute;
-  top: 372px;        /* ← aqui sim! */
+  top: 372px;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
   text-align: center;
   z-index: 10;
- 
- 
 }
 
 .card-description {
@@ -309,8 +302,9 @@ button {
 }
 
 .card-description-wrapper.long-description {
-  top: 370px; /* ou o valor que funcione melhor para os 3 casos */
+  top: 370px;
 }
+
 .card-title-wrapper {
   position: absolute;
   top: 150px;
@@ -318,6 +312,7 @@ button {
   z-index: 10;
   padding: 6px 12px; 
 }
+
 .card-title {
   color: #8045DD;
   font-weight: 800;
@@ -325,7 +320,7 @@ button {
   margin: 0;
   white-space: nowrap; 
   text-shadow: none;
- font-size: 0.8rem;
+  font-size: 0.8rem;
 }
 
 .close-btn {
@@ -341,7 +336,6 @@ button {
   justify-content: center;
   padding: 0;
   border-radius: 50%;
-  
 }
 
 .close-btn img {
@@ -350,7 +344,6 @@ button {
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
 }
-
 
 .nav-arrow {
   position: absolute;
@@ -376,12 +369,12 @@ button {
 
 .nav-arrow.left {
   left: -22px;
-  top:287px;
+  top: 287px;
 }
 
 .nav-arrow.right {
   right: -22px;
-  top:287px;
+  top: 287px;
 }
 
 .nav-arrow.hide {
@@ -402,9 +395,6 @@ button {
   word-break: break-word;
   text-align: left;
   line-height: 1.3;
-  
-  
-
 }
 
 .vertical-label.long-credit {
@@ -416,11 +406,9 @@ button {
   position: absolute;
   bottom: 440px;
   right: 60px;
-  
-  
-
 }
-.vertical-label.extra-long-credit{
+
+.vertical-label.extra-long-credit {
   background: none;  
   font-size: 5px;
   max-width: 190px;
@@ -429,8 +417,8 @@ button {
   position: absolute;
   bottom: 420px;
   right: 75px;
-  
 }
+
 .open-word-logo-global {
   position: fixed;
   bottom: 10px;
@@ -442,22 +430,78 @@ button {
   object-fit: contain;
   pointer-events: none;
 }
-/*modal credito*/
 
+/* =========================================================================
+   MODAL DE CRÉDITOS — BASE (herda mobile-first) - REPLICANDO EXATAMENTE O DA GALERIA
+   ========================================================================= */
+#menuModal .modal-dialog {
+  margin: 0;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transform: none !important;
+}
 
+#menuModal .modal-content {
+  background: url('/assets/img_blackout.png') center center / cover no-repeat;
+  border: none;
+  padding: 0;
+  width: 100vw;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+}
+
+.custom-popup-dialog {
+  max-width: 900px;
+}
+
+.custom-popup-content {
+  background: url('assets/img_popup.png') center center / cover no-repeat;
+  border: none;
+  padding: 0;
+  border-radius: 20px;
+  height: 90vh;
+  max-height: 95vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.popup-body {
+  padding: 0 !important;
+  height: 100%;
+  padding: 40px !important;
+}
+
+#menuModal .modal-dialog {
+  transform: none !important;
+}
+
+/* Modal Crédito */
 .modal-credito-texto-creditos,
 .modal-credito-texto-utilizar {
   position: absolute;
-  top: 10;
+  top: 0;
   left: 0;
   padding: 1rem;
   width: 100%;
   height: 100%;
-  color: #fff; /* ou outra cor que contraste com o fundo */
+  color: #fff;
   overflow-y: auto;
   z-index: 2;
 }
-.btn-close-custom-styled { /*botao credito*/
+
+.btn-close-custom-styled {
   position: absolute;
   top: 80px;
   right: 14px;
@@ -469,15 +513,13 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
-.btn-close-custom-styled img {/*botao credito*/
+.btn-close-custom-styled img {
   width: 43px;
   height: auto;
   object-fit: contain;
 }
-
 
 /* Caixa de créditos com borda parcial no topo */
 .popup-caixa-creditos {
@@ -493,18 +535,15 @@ button {
   overflow: hidden;
 }
 
-/* Borda parcial no topo (50%) */
 .popup-caixa-creditos::before {
-
   content: "";
   position: absolute;
   top: 0;
-  right: 0; /* começa da direita */
-  width: 41%; /* metade da largura */
+  right: 0;
+  width: 41%;
   height: 0;
   border-top: 3px solid #fff;
-  z-index: 2
-
+  z-index: 2;
 }
 
 /* Título sem borda inferior */
@@ -521,9 +560,9 @@ button {
   background-color: #8A2BE2;
   width: 60%;
   position: relative;
-  top:25px;
-  
+  top: 25px;
 }
+
 /* Caixa de "Como Utilizar" */
 .custom-popup-title-utilizar {
   font-size: 1.4rem;
@@ -538,9 +577,9 @@ button {
   background-color: #8A2BE2;
   width: 80%;
   position: relative;
-  top:25px;
-  
+  top: 25px;
 }
+
 .popup-caixa-utilizar {
   position: relative;
   width: 100%;
@@ -553,42 +592,34 @@ button {
   color: #fff;
   overflow: hidden;
 }
-.popup-caixa-utilizar::before {
 
+.popup-caixa-utilizar::before {
   content: "";
   position: absolute;
   top: 0;
-  right: 0; /* começa da direita */
-  width: 20.5%; /* metade da largura */
+  right: 0;
+  width: 20.5%;
   height: 0;
   border-top: 3px solid #fff;
-  z-index: 2
-
+  z-index: 2;
 }
 
-/* Texto sobreposto */
 .popup-texto-sobreposto {
   position: relative;
   z-index: 2;
   width: 100%;
   height: auto;
   pointer-events: none;
-    
 }
 
-
-
-/* Subtítulos */
 .popup-subtitle {
   font-size: 1.3rem;
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #000;
-  
+  color: #6D3BA9;
 }
 
-/* Parágrafos */
 .popup-item,
 .creditos-texto-formatado {
   font-size: 1rem;
@@ -596,10 +627,8 @@ button {
   margin-bottom: 1rem;
   word-wrap: break-word;
   text-align: left;
-  color: #000;
+  color: #6D3BA9;
 }
-
-
 
 /* =========================================================================
    ✅ ETAPA 2: MOBILE LANDSCAPE (601px – 900px, orientation: landscape)
@@ -607,110 +636,119 @@ button {
    Objetivo: Ajustar layout para celulares deitados. Scroll desativado.
    ========================================================================= */
 @media screen and (min-width: 601px) and (max-width: 900px) and (orientation: landscape) {
+  /* Ajustes gerais */
   html, body { overflow: hidden; height: 100%; }
-  main { overflow: hidden; height: 100%; display: flex; align-items: center; }
+  main { 
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 10px;
+  }
 
   .header-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 400px;
     padding: 0;
-    height: var(--header-height);
+    height: 48px;
     margin-left: 15px;
     border-radius: 12px 0 0 12px;
     -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
     mask-image: linear-gradient(to right, black 85%, transparent 100%);
-    
   }
-  .header-row { 
-    gap: 10px;
-   }
-  .btn-menu img {
-     width: 70px; 
-     height: 70px; 
-     padding: 5px;
-     }
-  .main-title { 
-    font-size: 2.3rem;
-     margin-left: 0;
-    }
 
-  /* Grid principal */
-.category-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px; /* Espaço entre os cards */
-  
-}
+  .header-row { gap: 10px; }
+  .btn-menu img { width: 45px; height: 45px; padding: 5px; }
+  .main-title { font-size: 1.4rem; margin-left: 0; }
 
-/* Item do grid */
-.category-grid-item {
-  flex: 0 0 120px; /* largura fixa por card */
-  display: flex;
-  justify-content: center;
-}
+  /* Grid de Categorias */
+  .category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 10px;
+    margin-top: 10px;
+  }
 
-/* Card */
-.category-card {
-  width: 100%;
-  max-width: 150px;
-  text-align: center;
-}
+  .category-grid-item[class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 
-/* Título padrão */
-.category-title {
-  width: 100%;
-  font-size: clamp(0.4rem, 1vw + 0.4rem, 0.9rem);
-  margin-top: 8px;
-  margin-bottom: 0;
-}
+  .category-grid-item {
+    flex: 0 0 140px;
+    max-width: 140px;
+    display: flex;
+    justify-content: center;
+    margin: 0 !important;
+  }
 
-/* Título longo */
-.category-title.long-title {
-  font-size: clamp(0.6rem, 1vw + 0.2rem, 0.9rem);
-  margin-top: 8px;
-  margin-bottom: 0;
-  text-align: center;
-}
+  .category-card {
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--category-card-aspect);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    background-color: var(--color-card);
+    box-shadow: var(--shadow-sm);
+  }
 
-/* Card da galeria */
-.gallery-card {
-  width: 90%;
-  height: 90%;
-  max-height: 850px;
-  border-radius: 16px;
-}
+  .category-card:hover,
+  .category-card:focus-within {
+    transform: scale(1.05) translateY(-5px);
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+  }
 
-/* Wrapper do título do card */
-.card-title-wrapper {
-  top: 25px;
-  left: 230px;
-  padding: 8px 16px;
-}
+  .category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+  }
 
-/* Título do card */
-.card-title {
-  font-size: unset;
-  padding: 6px 14px;
-  background: unset;
-  color: #8045DD;
-  text-shadow: 2px 2px 4px black;
-  border: unset;
-  white-space: nowrap;
-}
+  .category-title {
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    padding: 6px 12px;
+    background-color: #854EF5;
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.2;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 5;
+    white-space: normal;
+    overflow-wrap: break-word;
+    font-size: clamp(0.65rem, 1.8vw, 0.9rem);
+    width: 140px;
+    min-height: 30px;
+    box-sizing: border-box;
+  }
+
+  .category-title.long-title {
+    width: 140px;
+    font-size: clamp(0.6rem, 1.6vw, 0.8rem);
+    bottom: -40px;
+  }
+
+  /* Modal da Galeria */
+  .gallery-card { width: 90%; max-width: 1200px; height: 90%; max-height: 850px; }
   .close-btn { top: 10px; right: 10px; width: 45px; height: 45px; }
   .close-btn img { width: 25px; }
   .btn-close-custom-styled { top: -15px; right: -15px; width: 45px; height: 45px; }
   .btn-close-custom-styled img { width: 25px; }
   .image-wrapper { padding: 0 30px 80px; }
   .image-wrapper img { max-width: 90%; max-height: 75vh; }
-  .card-description-wrapper {
-    top: 400px;
-    width: 40%;
-    left: 310px;
-    font-size: 1.1em;
-   
-  }
+  .card-description-wrapper { top: 400px; width: 40%; left: 310px; font-size: 1.1em; }
   .card-description { font-size: 0.8rem; padding: 8px 12px; width: 90%; }
   .nav-arrow.left { left: 10px; }
   .nav-arrow.right { right: 10px; }
@@ -730,6 +768,127 @@ button {
     width: 120px;
     bottom: 15px;
     right: 15px;
+  }
+
+  /* ========== AJUSTES NO MODAL DE CRÉDITOS (LADO A LADO) ========== */
+  .modal-credito-texto-creditos,
+  .modal-credito-texto-utilizar {
+    position: static;
+    padding: 0;
+    width: auto;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .popup-row {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 10px;
+    height: auto;
+  }
+
+  .box-wrapper-creditos,
+  .box-wrapper-utilizar {
+    flex: 0 0 48%;
+    max-width: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .custom-popup-title,
+  .custom-popup-title-utilizar {
+    margin: 0 auto 1.5rem;
+    width: 80%;
+    position: static;
+    top: auto;
+    border: 3px solid #fff;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    padding: 0.5rem 1rem;
+    background-color: #8A2BE2;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .custom-popup-title {
+    width: 51%;
+    position: relative;
+    right: 64px;
+    top: 24px;
+  }
+
+  .custom-popup-title-utilizar {
+    width: 74%;
+    position: relative;
+    right: 34px;
+    top: 24px;
+  }
+
+  .popup-caixa-creditos,
+  .popup-caixa-utilizar {
+    width: 100%;
+    padding: 1.5rem;
+    background-color: #F9C4FC;
+    border-left: 3px solid #fff;
+    border-right: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    border-radius: 0 15px 15px 15px;
+    color: #6D3BA9;
+    overflow-y: auto;
+    flex-grow: 1;
+    position: relative;
+  }
+
+  /* Ajuste de altura específico para landscape */
+  .box-wrapper-utilizar .popup-caixa-utilizar {
+    flex-grow: 0;
+    height: 60%;
+  }
+
+  .popup-caixa-creditos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 0;
+    border-top: 3px solid #fff;
+    z-index: 2;
+  }
+
+  .popup-caixa-utilizar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 27%;
+    height: 0;
+    border-top: 3px solid #fff;
+    z-index: 2;
+  }
+
+  .popup-subtitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #6D3BA9;
+  }
+
+  .popup-item,
+  .creditos-texto-formatado {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    word-wrap: break-word;
+    text-align: left;
+    color: #6D3BA9;
   }
 }
 
@@ -775,7 +934,6 @@ button {
     bottom: calc(-40px * var(--card-scale) + 5px);
     width: calc(180px * var(--card-scale));
     font-size: calc(1.3rem * var(--card-scale));
-  
   }
   .category-title.long-title {
     width: calc(204px * var(--card-scale));
@@ -821,8 +979,6 @@ button {
   }
 }
 
-
-
 /* =========================================================================
    ✅ ETAPA 4: DESKTOP 22 POLEGADAS OU MAIOR (≥1500px)
    Tamanho de referência no DevTools: 1920px × 1080px ou 2560px × 1440px
@@ -839,39 +995,33 @@ button {
   }
 
   .header-container {
-   
- width: 100%;
-  max-width: 600px;
-  padding: 0;
-  height: var(--header-height);
-  margin-left: 15px;
-
+    width: 100%;
+    max-width: 600px;
+    padding: 0;
+    height: var(--header-height);
+    margin-left: 15px;
   }
   .header-row { 
     gap: 10px; 
   }
   .btn-menu img { 
     width: 70px;
-     height: 70px;
-     }
-  
-.main-title {
-  font-size: 2.3rem;
-  margin-left: 0;
-  margin-top: 0; /* ajuste para aproximar do topo */
-}
-
+    height: 70px;
+  }
+  .main-title {
+    font-size: 2.3rem;
+    margin-left: 0;
+    margin-top: 0;
+  }
 
   .category-grid {
-    
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-  padding: 0 20px;
-  margin-top: 10px;
-  margin-left: 50px;
-
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    padding: 0 20px;
+    margin-top: 10px;
+    margin-left: 50px;
   }
   .category-card {
     width: 250px;
@@ -892,35 +1042,33 @@ button {
   }
 
   .gallery-card { 
-   
-  width: 90%;
-  max-width: 1200px;
-  height: 90%;
-  max-height: 850px;
-
-      }
+    width: 90%;
+    max-width: 1200px;
+    height: 90%;
+    max-height: 850px;
+  }
   .close-btn {
-     top: 35px; 
-     right: 170px;
-      width: 65px;
-       height: 65px;
-       }
+    top: 35px; 
+    right: 170px;
+    width: 65px;
+    height: 65px;
+  }
   .close-btn img { 
     width: 100px;
-   }
+  }
   .btn-close-custom-styled { 
     top: -22px;
-     right: -22px;
-      width: 65px; 
-      height: 65px;
-     }
+    right: -22px;
+    width: 65px; 
+    height: 65px;
+  }
   .btn-close-custom-styled img { 
     width: 100px;
-   }
+  }
   .card-description-wrapper {
-     bottom: 115px; 
-     top: unset; 
-    }
+    bottom: 115px; 
+    top: unset; 
+  }
   .card-description {
     font-size: 1.15rem;
     padding: 14px 18px;
@@ -943,34 +1091,3 @@ button {
     right: 15px;
   }
 }
-
-
-
-/* =========================================================================
-   MODAL DE CRÉDITOS — BASE (herda mobile-first)
-   ========================================================================= */
-.custom-popup-dialog {
-  max-width: 900px;
-}
-
-.custom-popup-content {
-  background: url('assets/img_popup.png') center center / cover no-repeat;
-  border: none;
-  padding: 0;
-  border-radius: 20px;
-  height: 90vh;
-  max-height: 95vh;
-  width: 100%;
-  position: relative;
-}
-
-.popup-body {
-  padding: 0 !important;
-  height: 100%;
-  padding: 40px !important;
-}
-
-#menuModal .modal-dialog {
-  transform: none !important;
-}
-
