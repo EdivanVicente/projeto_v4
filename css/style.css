@@ -952,11 +952,12 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: url('/assets/img_blackout.png') center center / cover no-repeat;
 }
 
 /* 2. Fundo blackout (imagem de fundo total) */
 #menuModal .modal-content {
-  background: url('/assets/img_blackout.png') center center / cover no-repeat;
+  /* background: url('/assets/img_popup.png') center center / cover no-repeat; */
   border: none;
   width: 100vw;
   height: 100vh;
@@ -971,7 +972,7 @@ button {
 
 /* 3. Estrutura do popup (imagem principal do conteúdo) */
 .custom-popup-content {
-  background: url('/assets/img_pop.png') center center / cover no-repeat;
+  
   width: 90vw;
   max-width: 900px;
   min-height: 85vh;
@@ -984,6 +985,7 @@ button {
   margin-top: 20px;
   margin-bottom: 20px;
   transform: translateX(-10px);
+  border: 1px solid red;
   
 }
 
@@ -1021,7 +1023,7 @@ button {
 /* 6. Layout interno das seções - MOBILE FIRST (COLUNA) */
 .popup-row {
   flex-direction: row;
-  gap: 20px;
+  gap: 10px;
   width: 100%;
   justify-content: space-between;
 }
@@ -1029,6 +1031,7 @@ button {
 .box-wrapper-creditos,
 .box-wrapper-utilizar {
   width: 45%; /* 👈 AJUSTE FÁCIL DE MUDAR DEPOIS — ex: 40%, 50%, etc. */
+  
   
 }
 
@@ -1071,7 +1074,8 @@ button {
   margin: 0 auto;
   position: relative;
   top: 1px;
-  right: 49px;
+  right: 69px;
+  
 }
 
 /* 8. Caixas internas */
@@ -1083,11 +1087,12 @@ button {
   border-radius: 0 15px 15px 15px;
   color: #6D3BA9;
   padding: 1.2rem;
-  font-size: 1rem;
+  font-size: 0.4rem;
   line-height: 1.6;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+  
 }
 .popup-caixa-creditos {
   position: relative;
@@ -1095,23 +1100,28 @@ button {
   border-top: none;
   border-radius: 0 15px 15px 15px;
   color: #6D3BA9;
-  padding: 1.2rem;
+  padding: 0.9rem;
   font-size: 1rem;
   line-height: 1.6;
   box-sizing: border-box;
-  width: 100%;
-  height: 100;
+  width: 100%;  
+ 
 }
 
 /* 👇 SCROLL APENAS NO BOX DE CRÉDITOS */
 .popup-caixa-creditos {
   overflow-y: auto;
-  max-height: calc(100vh - 250px); /* Ajuste de altura máxima para scroll — pode ser modificado */
+  max-height: calc(90vh - 40px); /* Ajuste de altura máxima para scroll — pode ser modificado */
+  
 }
-
+.popup-caixa-utilizar {
+  overflow-y: auto;
+  max-height: calc(90vh - 40px); /* Ajuste de altura máxima para scroll — pode ser modificado */
+  right: 20px;
+}
 /* 9. Subtítulos e textos */
 .popup-subtitle {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #6D3BA9;
   margin: 1rem 0 0.5rem;
@@ -1119,7 +1129,7 @@ button {
 
 .popup-item,
 .creditos-texto-formatado {
-  font-size: 0.95rem;
+  font-size: 0.6rem;
   color: #6D3BA9;
   text-align: left;
   margin-bottom: 0.8rem;
@@ -1140,16 +1150,13 @@ button {
 .popup-caixa-creditos::before { width: 54%; }
 .popup-caixa-utilizar::before { width: 36%; }
 
-/* =========================================================================
-   ✅ ETAPA 3: DESKTOP 19 POLEGADAS (1024px – 1499px)
-   Tamanho de referência no DevTools: 1280px × 800px ou 1440px × 900px
-   Objetivo: Layout para monitores de 19". Scroll reativado.
-   ========================================================================= */
-
+}
 /* ==============================================
-   📱 GLOBAL — DESKTOP 19"
-   ============================================== */
-@media screen and (min-width: 1024px) and (max-width: 1499px) {
+📺 DEBUG UNIVERSAL — DESKTOPS E TABLETS (>=1024px)
+============================================== */
+@media screen and (min-width: 900px) and (max-width:1023px) {
+
+
   html,
   body {
     overflow: hidden;
@@ -1167,13 +1174,14 @@ button {
 
   .header-container {
     width: 100%;
-    max-width: 580px;
+    max-width: 400px;
     padding: 0;
-    height: 58px;
+    height: 48px;
     margin-left: 15px;
     border-radius: 12px 0 0 12px;
     -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
     mask-image: linear-gradient(to right, black 85%, transparent 100%);
+    
   }
 
   .header-row {
@@ -1181,13 +1189,13 @@ button {
   }
 
   .btn-menu img {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     padding: 5px;
   }
 
   .main-title {
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     margin-left: 0;
      text-shadow:
         2px 2px 0 #00008B,
@@ -1199,23 +1207,26 @@ button {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 30px;
     padding: 0 10px;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 2px;
+    margin-bottom: 10px;
+    
   }
 
   .category-grid-item[class*="col-"] {
     padding-left: 0 !important;
     padding-right: 0 !important;
+    
   }
 
   .category-grid-item {
-    flex: 0 0 265px;
-    max-width: 940px;
+    flex: 0 18 139px;
+    max-width: 400px;
     display: flex;
     justify-content: center;
     margin: 0 !important;
+    border: 1px solid red;
   }
 
   .category-card {
@@ -1261,20 +1272,20 @@ button {
     z-index: 5;
     white-space: normal;
     overflow-wrap: break-word;
-    font-size: clamp(0.65rem, 1.8vw, 1.2rem);
-    width: 150px;
+    font-size: clamp(0.65rem, 1.8vw, 0.9rem);
+    width: 88px;
     min-height: 30px;
     box-sizing: border-box;
   }
 
   .category-title.long-title {
-    width: 169px;
-    font-size: clamp(0.65rem, 1.8vw, 1rem);
-    bottom: -40px;
+    width: 106px;
+    font-size: 9px;
+    bottom: -36px;
   }
 
   /* ==============================================
-     🖼️ MODAL DA GALERIA — DESKTOP 19"
+     🖼️ MODAL DA GALERIA — 900px
      ============================================== */
   .gallery-card {
     width: 90%;
@@ -1284,8 +1295,8 @@ button {
   }
 
   .close-btn {
-    top: 27px;
-    right: 200px;
+    top: 5px;
+    right: 110px;
     z-index: 1055;
     width: 50px;
     height: 50px;
@@ -1298,21 +1309,12 @@ button {
   }
 
   .close-btn img {
-    width: 50px;
+    width: 30px;
     height: auto;
     object-fit: contain;
   }
 
-  .btn-close-custom-styled {
-    top: -15px;
-    right: -15px;
-    width: 45px;
-    height: 45px;
-  }
 
-  .btn-close-custom-styled img {
-    width: 25px;
-  }
 
   .image-wrapper img {
     max-width: 90%;
@@ -1323,10 +1325,10 @@ button {
 
   .card-description-wrapper {
     position: absolute;
-    top: 450px;
+    top: 276px;
     left: 50%;
     transform: translateX(-50%);
-    width: 50%;
+    width: 43%;
     text-align: center;
     z-index: 10;
   }
@@ -1342,20 +1344,21 @@ button {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal;
-    font-size: 0.8em;
+    font-size: 0.5em;
     padding: 8px 12px;
   }
 
   .card-description-wrapper.long-description {
-    top: 450px;
+    top: 260px;
   }
 
   .card-title-wrapper {
     position: absolute;
-    top: 35px;
-    left: 255px;
+    top: 20px;
+    left: 245px;
     z-index: 10;
     padding: 6px 12px;
+   
   }
 
   .card-title {
@@ -1365,7 +1368,7 @@ button {
     margin: 0;
     white-space: nowrap;
     text-shadow: none;
-    font-size: 1.7rem;
+    font-size: 1rem;
   }
 
   .nav-arrow {
@@ -1386,18 +1389,18 @@ button {
   }
 
   .nav-arrow img {
-    width: 50px;
+    width: 35px;
     height: auto;
   }
 
   .nav-arrow.left {
-    left: 80px;
-    top: 250px;
+    left: 100px;
+    top: 150px;
   }
 
   .nav-arrow.right {
-    right: 80px;
-    top: 250px;
+    right: 100px;
+    top: 150px;
   }
 
   .nav-arrow.hide {
@@ -1405,12 +1408,10 @@ button {
   }
 
   .vertical-label {
-    position: absolute;
-    bottom: 480px;
-    right: 280px;
+    position: absolute;   
     transform: rotate(-90deg);
     transform-origin: top right;
-    font-size: 8px;
+    font-size: 5px;
     max-width: 220px;
     color: white;
     padding: 4px 8px;
@@ -1418,28 +1419,32 @@ button {
     word-break: break-word;
     text-align: left;
     line-height: 1.3;
+    bottom: 307px;
+    right: 265px;
+  
   }
 
   .vertical-label.long-credit {
     background: none;
-    font-size: 10px;
-    max-width: 300px;
+    font-size: 5px;
+    max-width: 200px;
     line-height: 1.2;
     border: none;
     position: absolute;
-    bottom: 470px;
-    right: 295px;
+    bottom: 302px;
+    right: 270px;
+    border: 1px solid red;
   }
 
   .vertical-label.extra-long-credit {
     background: none;
-    font-size: 8px;
-    max-width: 350px;
+    font-size: 5px;
+    max-width: 204px;
     line-height: 1.2;
     border: none;
     position: absolute;
-    bottom: 470px;
-    right: 305px;
+    bottom: 289px;
+    right: 278px;
   }
 
   .open-word-logo-global {
@@ -1455,345 +1460,226 @@ button {
   }
 
   /* ==============================================
-     📄 MODAL DE CRÉDITOS — DESKTOP 19"
+     📄 MODAL DE CRÉDITOS — 900px
      ============================================== */
-  .popup-row {
-    flex-direction: row;
-    gap: 20px;
-  }
 
-  .box-wrapper-creditos {
-    flex: 0 0 60%;
-    max-width: 60%;
-  }
+/* 1. Modal Dialog — Apenas container de posicionamento */
+#menuModal .modal-dialog {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/assets/img_blackout.png') center center / cover no-repeat;
+}
 
-  .box-wrapper-utilizar {
-    flex: 0 0 40%;
-    max-width: 40%;
-  }
+/* 2. Fundo blackout (imagem de fundo total) */
+#menuModal .modal-content {
+  /* background: url('/assets/img_popup.png') center center / cover no-repeat; */
+  border: none;
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: none;
+  padding: 0;
+  overflow: auto;
+}
 
-  .custom-popup-title,
-  .custom-popup-title-utilizar {
-    margin: 0 auto;
-    width: fit-content;
-  }
+/* 3. Estrutura do popup (imagem principal do conteúdo) */
+.custom-popup-content {
+  
+  width: 90vw;
+  max-width: 900px;
+  min-height: 75vh;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transform: translateX(-10px);
+  overflow: visible;
+  
+  
+  
+}
+/* 4. Corpo do popup */
+
+.popup-body {
+  padding: 0;
+  height: auto;
+  min-height: 80vh; /* corrigido aqui */
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
 }
 
 
-/* =========================================================================
-   ✅ ETAPA 4: DESKTOP 22 POLEGADAS OU MAIOR (≥1500px)
-   Tamanho de referência no DevTools: 1920px × 1080px ou 2560px × 1440px
-   ========================================================================= */
+/* 5. Botão de fechar (X) */
+.btn-close-custom-styled {
+  position: absolute;
+  top: -19px;
+  right: 115px;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: visible;
+}
 
-/* ==============================================
-   📱 GLOBAL — DESKTOP 22"+ 
-   ============================================== */
-@media screen and (min-width: 1500px) {
-  html,
-  body {
-    overflow: hidden;
-    height: 100%;
-  }
+.btn-close-custom-styled img {
+  width: 35px;
+  height: auto;
+  object-fit: contain;
+}
 
-  main {
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 20px;
-  }
+/* 6. Layout interno das seções - MOBILE FIRST (COLUNA) */
+.popup-row {
+  flex-direction: row;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+  border: 3px solid #fff;
+  background-color: hsla(271, 76%, 53%, 0.5); /* 50% de opacidade */
+  
+}
 
-  /* ===== HEADER ===== */
-  .header-container {
-    width: 100%;
-    max-width: 780px;
-    height: 70px;
-    margin-left: 20px;
-    border-radius: 16px 0 0 16px;
-    -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
-    mask-image: linear-gradient(to right, black 85%, transparent 100%);
-  }
+.box-wrapper-creditos{
+  width: 50%; 
+}
 
-  .header-row {
-    gap: 15px;
-  }
 
-  .btn-menu img {
-    width: 80px;
-    height: 80px;
-    padding: 5px;
-  }
+.box-wrapper-utilizar {
+  width: 45%; /* 👈 AJUSTE FÁCIL DE MUDAR DEPOIS — ex: 40%, 50%, etc. */
+ 
+  
+}
 
-  .main-title {
-    font-size: 2.6rem;
-    margin-left: 0;
-    text-shadow:
-      2px 2px 0 #00008B,
-      3px 3px 0 #00008B,
-      4px 4px 2px rgba(0, 0, 139, 0.6);
-  }
+.custom-popup-title,
+.custom-popup-title-utilizar {
+  margin: 0 auto;
+  width: fit-content;
+  
+}
 
-  /* ===== GRID DE CATEGORIAS ===== */
-  .category-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 0 40px;
-    margin-top: 30px;
-    margin-bottom: 40px;
-  }
+/* 7. Títulos das seções */
+.custom-popup-title {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #8A2BE2;
+  border: 3px solid #fff;
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
+  font-size: 0.8rem;
+  width: 100px;
+  margin: 0 auto;
+  position: relative;
+  right: 93px;
+  top: 1px;
+}
 
-  .category-grid-item[class*="col-"] {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
+.custom-popup-title-utilizar {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #8A2BE2;
+  border: 3px solid #fff;
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
+  font-size: 0.8rem;
+  width: 158px;
+  margin: 0 auto;
+  position: relative;
+  top: 1px;
+  right: 69px;
+  
+}
 
-  .category-grid-item {
-    flex: 0 0 340px;
-    max-width: 340px;
-    display: flex;
-    justify-content: center;
-    margin: 0 !important;
-  }
+/* 8. Caixas internas */
 
-  .category-card {
-    position: relative;
-    width: 100%;
-    aspect-ratio: var(--category-card-aspect);
-    border-radius: 14px;
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    background-color: var(--color-card);
-    box-shadow: var(--shadow-sm);
-  }
+.popup-caixa-utilizar {
+  position: relative;
+  border: 3px solid #fff;
+  border-top: none;
+  border-radius: 0 15px 15px 15px;
+  color: #6D3BA9;
+  padding: 1.2rem;
+  font-size: 0.4rem;
+  line-height: 1.6;
+  box-sizing: border-box;
+  width: 100%;
+  height: 50%;
+  
+}
+.popup-caixa-creditos {
+  position: relative;
+  border: 3px solid #fff;
+  border-top: none;
+  border-radius: 0 15px 15px 15px;
+  color: #6D3BA9;
+  padding: 0.9rem;
+  font-size: 0.7rem;
+  line-height: 1.6;
+  box-sizing: border-box;
+  width: 100%;  
+ 
+}
 
-  .category-card:hover,
-  .category-card:focus-within {
-    transform: scale(1.06) translateY(-5px);
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-lg), var(--shadow-glow);
-  }
+/* 👇 SCROLL APENAS NO BOX DE CRÉDITOS */
+.popup-caixa-creditos {
+  overflow-y: auto;
+  max-height: calc(90vh - 40px); /* Ajuste de altura máxima para scroll — pode ser modificado */
+  
+}
+.popup-caixa-utilizar {
+  overflow-y: auto;
+  max-height: calc(90vh - 40px); /* Ajuste de altura máxima para scroll — pode ser modificado */
+  right: 20px;
+}
+/* 9. Subtítulos e textos */
+.popup-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6D3BA9;
+  margin: 1rem 0 0.5rem;
+}
 
-  .category-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-  }
+.popup-item,
+.creditos-texto-formatado {
+  font-size: 0.6rem;
+  color: #6D3BA9;
+  text-align: left;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
 
-  .category-title {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-weight: bold;
-    padding: 8px 14px;
-    background-color: #854EF5;
-    color: white;
-    text-transform: uppercase;
-    border: 3px solid #fff;
-    border-radius: 12px;
-    text-align: center;
-    z-index: 5;
-    white-space: normal;
-    overflow-wrap: break-word;
-    font-size: clamp(0.8rem, 1.8vw, 1.3rem);
-    width: 180px;
-    min-height: 34px;
-    box-sizing: border-box;
-  }
+/* 10. Efeitos visuais de borda */
+.popup-caixa-creditos::before,
+.popup-caixa-utilizar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 0;
+  border-top: 3px solid #fff;
+}
 
-  .category-title.long-title {
-    width: 200px;
-    font-size: clamp(0.8rem, 1.8vw, 1.1rem);
-    bottom: -48px;
-  }
+.popup-caixa-creditos::before { width: 54%; }
+.popup-caixa-utilizar::before { width: 36%; }
 
-  /* ==============================================
-     🖼️ MODAL DA GALERIA — DESKTOP 22"+
-     ============================================== */
-  .gallery-card {
-    width: 90%;
-    max-width: 1350px;
-    height: 90%;
-    max-height: 900px;
-  }
-
-  .close-btn {
-    top: 45px;
-    right: 240px;
-    z-index: 1055;
-    width: 75px;
-    height: 55px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-  }
-
-  .close-btn img {
-    width: 65px;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .image-wrapper img {
-    max-width: 90%;
-    max-height: 80vh;
-    position: relative;
-    top: 30px;
-  }
-
-  .card-description-wrapper {
-    position: absolute;
-    top: 605px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 55%;
-    text-align: center;
-    z-index: 10;
-  }
-
-  .card-description {
-    color: #8045DD;
-    font-weight: 600;
-    line-height: 1.5;
-    text-transform: uppercase;
-    font-size: 1rem;
-    padding: 10px 14px;
-  }
-
-  .card-description-wrapper.long-description {
-    top: 600px;
-  }
-
-  .card-title-wrapper {
-    position: absolute;
-    top: 41px;
-    left: 332px;
-    z-index: 10;
-    padding: 8px 14px;
-  }
-
-  .card-title {
-    color: #8045DD;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0;
-    white-space: nowrap;
-    text-shadow: none;
-    font-size: 2rem;
-  }
-
-  /* ===== SETAS DE NAVEGAÇÃO ===== */
-  .nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 60;
-    background: transparent !important;
-    width: 70px;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .nav-arrow img {
-    width: 55px;
-    height: auto;
-  }
-
-  .nav-arrow.left {
-    left: 127px;
-    top: 377px;
-  }
-
-  .nav-arrow.right {
-    right: 127px;
-    top: 377px;
-  }
-
-  .nav-arrow.hide {
-    display: none !important;
-  }
-
-  /* ===== LABEL VERTICAL ===== */
-  .vertical-label {
-    position: absolute;
-    bottom: 612px;
-    right: 342px;
-    transform: rotate(-90deg);
-    transform-origin: top right;
-    font-size: 10px;
-    max-width: 260px;
-    color: white;
-    padding: 4px 8px;
-    white-space: normal;
-    word-break: break-word;
-    text-align: left;
-    line-height: 1.3;
-  }
-
-  .vertical-label.long-credit {
-    background: none;
-    font-size: 10px;
-    max-width: 444px;
-    line-height: 1.2;
-    border: none;
-    bottom: 622px;
-    right: 352px;
-  }
-
-  .vertical-label.extra-long-credit {
-    background: none;
-    font-size: 10px;
-    max-width: 444px;
-    line-height: 1.2;
-    border: none;
-    bottom: 578px;
-    right: 377px;
-  }
-
-  /* ===== LOGO WORD ===== */
-  .open-word-logo-global {
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-    z-index: 1056;
-    width: 100px;
-    height: auto;
-    object-fit: contain;
-    pointer-events: none;
-  }
-
-  /* ==============================================
-     📄 MODAL DE CRÉDITOS — DESKTOP 22"+
-     ============================================== */
-  .popup-row {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .box-wrapper-creditos {
-    flex: 0 0 60%;
-    max-width: 60%;
-  }
-
-  .box-wrapper-utilizar {
-    flex: 0 0 40%;
-    max-width: 40%;
-  }
-
-  .custom-popup-title,
-  .custom-popup-title-utilizar {
-    margin: 0 auto;
-    width: fit-content;
-  }
 }
