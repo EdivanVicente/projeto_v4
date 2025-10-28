@@ -142,10 +142,10 @@ button {
 .main-title {
   font-size: 1.2rem;
   color: white;
-   text-shadow:
-        2px 2px 0 #00008B,
-        3px 3px 0 #00008B,
-        4px 4px 2px rgba(0, 0, 139, 0.6);
+  text-shadow:
+  2px 2px 0 #00008B,
+  3px 3px 0 #00008B,
+  4px 4px 2px rgba(0, 0, 139, 0.6);
   margin: 0;
   margin-left: 10px;
   flex-shrink: 0;
@@ -313,6 +313,10 @@ button {
 .card-description-wrapper.long-description {
   top: 370px;
 }
+.card-description-wrapper.extra-long-description {
+  top: 367px;
+}
+
 
 .card-title-wrapper {
   position: absolute;
@@ -456,11 +460,12 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  background: url('/assets/img_blackout.png') center center / cover no-repeat;
 }
 
 /* 2. Fundo blackout (imagem de fundo total) */
 #menuModal .modal-content {
-  background: url('/assets/img_blackout.png') center center / cover no-repeat;
+  background: none;
   border: none;
   width: 100vw;
   height: 100vh;
@@ -470,7 +475,7 @@ button {
   position: relative;
   box-shadow: none;
   padding: 0;
-  overflow: auto; /* Permite scroll no corpo da tela em Mobile */
+  overflow: auto; 
 }
 
 /* 3. Estrutura do popup (imagem principal do conteúdo) */
@@ -487,7 +492,6 @@ button {
   box-sizing: border-box;
   margin-top: 20px;
   margin-bottom: 20px;
-  /* CORREÇÃO: Remove o offset fixo que quebrava o alinhamento */
   transform: none; 
 }
 
@@ -528,7 +532,6 @@ button {
   gap: 25px;
   width: 90%; /* Usa 90% para margem interna */
   height: auto;
-  /* CORREÇÃO: Remove posicionamento fixo e centraliza */
   left: 0;
   top: 0;
   position: relative;
@@ -549,9 +552,9 @@ button {
   font-size: 0.9rem;
   margin: 0 auto;
   position: relative;
-  /* Alinha os títulos com a borda esquerda da caixa */
   left: -29.3%;
   top: 21px;
+  
 }
 .custom-popup-title-utilizar {
   text-align: center;
@@ -568,6 +571,7 @@ button {
   /* Alinha os títulos com a borda esquerda da caixa */
   left: -21.5%;
   top: 21px;
+  
 }
 
 
@@ -593,7 +597,6 @@ button {
   overflow-y: hidden; /* Controlado por max-height/scroll abaixo */
   box-sizing: border-box;
   width: 100%; /* Usa 100% da largura do col-12 */
-  /* CORREÇÃO: Remove posicionamento fixo */
   top: 0; 
   left: 0; 
   right: 0;
@@ -607,11 +610,12 @@ button {
   border-top: none;
   border-radius: 0 15px 15px 15px;
   color: #6D3BA9; 
-  font-size: 0.9rem;
-  line-height:1.1;
-  overflow-y: hidden; /* Controlado por max-height/scroll abaixo */
+  font-size: 0.9rem;  
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 1.2rem;;
   box-sizing: border-box;
-  width: 100%; /* Usa 100% da largura do col-12 */
+  width: 100%; 
   top: 0; 
   left: 0; 
   right: 0;
@@ -656,6 +660,7 @@ button {
 .popup-caixa-creditos::before { width: calc(100% - 124px); }
 .popup-caixa-utilizar::before { width: calc(100% - 172px); }
 
+
 /* =========================================================================
    ✅ ETAPA 2: MOBILE LANDSCAPE (601px – 900px, orientation: landscape)
    Aplica layout de LINHA para telas de celular deitado (como A51)
@@ -666,16 +671,20 @@ button {
   /* Ajustes Gerais de Layout do Site */
   html, body, main { overflow: hidden; height: 100%; }
   main { padding-top: 6px; justify-content: flex-start; }
-  /* ... [Mantenha seus ajustes de Header e Grid de Categorias] ... */
+ 
   .category-grid { gap: 15px; } /* Reduz o gap */
-  .category-grid-item { flex: 0 0 140px; max-width: 150px; }
+  .category-grid-item { flex: 0 0 140px; max-width: 140px; }
   .category-title { bottom: -30px; font-size: 0.65rem; width: 88px; }
   .category-title.long-title { width: 109px; bottom: -35px; }
-  /* ... [Mantenha seus ajustes de Modal Galeria] ... */
+  
 
   /*====================================================================
    📄 MODAL DE CRÉDITOS — MOBILE LANDSCAPE
   ======================================================================*/
+  .header-container {
+    width: 55%;
+  }
+  
   .custom-popup-content {
       /* Ajuste para telas menores deitadas */
       width: 95vw;
@@ -694,10 +703,11 @@ button {
     margin: 0 auto; /* Centraliza */
     padding: 15px 0;
     align-items: flex-start;
-    background-color: hsla(271, 76%, 53%, 0.5); 
+    background: url('/assets/background.jpg') center center / cover no-repeat;
     border: 3px solid #FFF;
     border-radius: 10px;
     top: 30px;
+    
   }
 
   .box-wrapper-creditos { width: 50%; }
@@ -709,7 +719,7 @@ button {
     padding: 0.5rem 0.8rem;
     position: relative;
     /* Alinha o título com a borda esquerda da caixa */
-    left: -70px;    
+    left: -40px;    
     
     top: 10px;
     
@@ -721,7 +731,7 @@ button {
     padding: 0.5rem 0.8rem;
     position: relative;
     /* Alinha o título com a borda esquerda da caixa */
-    left: -18px;
+    left: 12px;
     top:10px;
    
    
@@ -739,7 +749,7 @@ button {
     padding: 1rem;
     /* CORREÇÃO: Remove posicionamento fixo */
     top: 10px;
-    left: 0;
+    left: 30px;
     right: 0;
     
   }
@@ -752,7 +762,7 @@ button {
   }
   .popup-caixa-utilizar {
     overflow-y: auto;
-    max-height: calc(90vh - 130px); 
+    max-height: calc(85vh - 140px); 
   }
 
   /* Textos */
@@ -761,6 +771,14 @@ button {
     font-size: 0.65rem;
     line-height: 1;
   }
+/* 9. Subtítulos e textos */
+.popup-subtitle {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #6D3BA9;
+  line-height: 1; 
+}
+
 
   /* Efeitos de Borda */
   .popup-caixa-creditos::before { width: calc(100% - 94px); }
@@ -793,16 +811,28 @@ button {
    ✅ MODAL GALERIA LANDSCAPE
    ========================================================================= */
 
+
+.image-wrapper img {
+  max-width: 95%;
+  max-height: 80vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  top: 20px;
+  position: relative;
+  
+}
+
 .card-description-wrapper {
   position: absolute;
   top: 372px; /* Posição ajustada */
   left: 50%;
   transform: translateX(-50%);
-  width: 40%;
+  width: 48%;
   text-align: center;
-  z-index: 10;
-  
-  top: 216px;
+  z-index: 10;  
+  top: 272px;
 }
 
 .card-description {
@@ -816,12 +846,17 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-  font-size: 0.4em; /* Tamanho pequeno, será ajustado em breakpoints */
+  font-size: 0.5em; /* Tamanho pequeno, será ajustado em breakpoints */
   padding: 8px 12px;
 }
 
 .card-description-wrapper.long-description {
-  top: 216px;
+  top: 272px;
+  
+}
+.card-description-wrapper.extra-long-description {
+  top: 262px;
+  
   
 }
 
@@ -841,14 +876,1025 @@ button {
   margin: 0;
   white-space: nowrap;
   text-shadow: none;
-  font-size: 0.9rem;
-  
-  BORDER:1px solid red;
+  font-size: 1rem;    
+  position: relative;
+  top:-130px;
+  left: 123px;
 }
 
 .close-btn {
   position: absolute;
-  top: 138px; /* Posição ajustada */
+  top: 7px;
+  right: 109px;
+  z-index: 1055;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  
+}
+
+.close-btn img {
+  width: 35px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 60;
+  background: transparent !important;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: none !important;
+}
+
+.nav-arrow img {
+  width: 40px;
+  height: auto;
+}
+
+.nav-arrow.left {
+  left: 22px;
+  top: 160px; /* Posição ajustada */
+}
+
+.nav-arrow.right {
+  right: 22px;
+  top: 160px; /* Posição ajustada */
+}
+
+.nav-arrow.hide {
+  display: none !important;
+}
+
+.vertical-label {
+  position: absolute;
+  bottom: 300px;
+  right: 175px;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+  font-size: 6px;
+  max-width: 220px;
+  color: white;
+  padding: 4px 8px;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.vertical-label.long-credit {
+ background: none;
+  font-size: 6px;
+  max-width: 230px;
+  line-height: 1.2;
+  border: none;
+  position: absolute;
+  bottom: 305px;
+  right: 184px;
+}
+
+
+.vertical-label.extra-long-credit {
+ background: none;
+  font-size: 6px;
+  max-width: 217px;
+  line-height: 1.2;
+  border: none;
+  position: absolute;
+  bottom: 284px;
+  right: 197px;
+}
+  
+}
+
+
+
+
+/* =========================================================================
+   ✅ ETAPA 3: DESKTOPS INTERMEDIÁRIOS (901px – 1023px)
+   ========================================================================= */
+@media screen and (min-width: 901px) and (max-width:1023px) {
+
+  /* Ajustes Gerais de Layout do Site */
+  html, body, main { overflow: hidden; height: 100%; }
+  main { padding-top: 3px; justify-content: flex-start; }
+  /* ... [Mantenha seus ajustes de Header e Grid de Categorias] ... */
+  .category-grid { gap: 10px; } /* Reduz o gap */
+  .category-grid-item { flex: 0 0 160px; max-width: 200px; }
+  .category-title { bottom: -30px; font-size: 0.65rem; width: 88px; }
+  .category-title.long-title { width: 109px; bottom: -35px; font-size: 0.6rem; }
+  /* ... [Mantenha seus ajustes de Modal Galeria] ... */
+
+  /*====================================================================
+   📄 MODAL DE CRÉDITOS — DESKTOPS INTERMEDIÁRIOS (901px – 1023px)
+  ======================================================================*/
+  .header-container {
+  width: 40%; 
+  }
+  
+  
+  .custom-popup-content {
+      /* Ajuste para telas menores deitadas */
+      width: 95vw;
+      max-width: 850px;
+      min-height: 90vh;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 15px; /* Reduz o padding */
+  }
+
+  /* Layout de Colunas (row) */
+  .popup-row {
+    flex-direction: row;
+    gap: 15px; /* Espaçamento ajustado */
+    width: 80%;
+    margin: 0 auto; /* Centraliza */
+    padding: 15px 0;
+    align-items: flex-start;
+    background: url('/assets/background.jpg') center center / cover no-repeat;
+    border: 3px solid #FFF;
+    border-radius: 10px;
+    top: 30px;
+   
+  }
+
+  .box-wrapper-creditos { width: 50%; }
+  .box-wrapper-utilizar { width: 40%; }
+  
+  /* Títulos */
+  .custom-popup-title{
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    position: relative;    
+    left: -77px;       
+    top: 10px;
+  }
+   .custom-popup-title-utilizar {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    position: relative;   
+    left: -18px;
+    top:10px;
+  }
+
+
+  .custom-popup-title { width: 100px; }
+  .custom-popup-title-utilizar { width: 150px; }
+
+  /* Caixas internas */
+  .popup-caixa-creditos,
+  .popup-caixa-utilizar {
+    width: 100%;
+    height: 100%; 
+    padding: 1rem;   
+    top: 5px;
+    left: 30px;
+    right: 0;
+    
+  }
+  
+  /* Altura Máxima e Scroll */
+  .popup-caixa-creditos {
+    overflow-y: auto;   
+    max-height: calc(90vh - 100px); 
+  }
+  .popup-caixa-utilizar {
+    overflow-y: auto;
+    max-height: calc(85vh - 140px); 
+  }
+
+  /* Textos */
+  .popup-item,
+  .creditos-texto-formatado {
+    font-size: 0.65rem;
+    line-height: 1;
+  }
+/* 9. Subtítulos e textos */
+.popup-subtitle {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #6D3BA9;
+  line-height: 1; 
+}
+
+
+  /* Efeitos de Borda */
+  .popup-caixa-creditos::before { width: calc(100% - 94px); }
+  .popup-caixa-utilizar::before { width: calc(100% - 144px); }
+
+  /* 4. Botão de fechar (X) */
+.btn-close-custom-styled {
+  position: absolute;
+  right: 66px;
+  top:10px;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-close-custom-styled img {
+  width: 35px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================================
+   ✅ MODAL GALERIA DESKTOPS INTERMEDIÁRIOS (901px – 1023px)
+   ========================================================================= */
+
+
+.image-wrapper img {
+  max-width: 95%;
+  max-height: 80vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  top: 20px;
+  position: relative;
+  
+}
+
+.card-description-wrapper {
+  position: absolute;
+  top: 372px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42%;
+  text-align: center;
+  z-index: 10;
+  top: 295px;
+}
+
+.card-description {
+  margin: 0;
+  color: #8045DD;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 0.5em; /* Tamanho pequeno, será ajustado em breakpoints */
+  padding: 8px 12px;
+}
+
+.card-description-wrapper.long-description {
+  top: 296px;
+  
+}
+.card-description-wrapper.extra-long-description {
+  top: 288px;
+  
+}
+
+.card-title-wrapper {
+  position: absolute;
+  top: 150px; /* Posição ajustada */
+  left: 36px;
+  z-index: 10;
+  padding: 6px 12px;
+  left: 30px;
+}
+
+.card-title {
+  color: #8045DD;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+  text-shadow: none;
+  font-size: 1rem;    
+  position: relative;
+  top:-130px;
+  left: 230px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 216px;
+  z-index: 1055;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  
+}
+
+.close-btn img {
+  width: 35px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 60;
+  background: transparent !important;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: none !important;
+}
+
+.nav-arrow img {
+  width: 40px;
+  height: auto;
+}
+
+.nav-arrow.left {
+  left: 117px;
+  top: 170px;
+}
+
+.nav-arrow.right {
+  right: 117px;
+  top: 170px;
+}
+
+.nav-arrow.hide {
+  display: none !important;
+}
+
+.vertical-label {
+  position: absolute;
+  bottom: 323px;
+  right: 277px;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+  font-size: 6px;
+  max-width: 220px;
+  color: white;
+  padding: 4px 8px;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.vertical-label.long-credit {
+  background: none;
+  font-size: 6px;
+  max-width: 239px;
+  line-height: 1.2;
+  border: none;
+  position: absolute;
+  bottom: 320px;
+  right: 284px;
+  }
+  .vertical-label.extra-long-credit {
+  background: none;
+  font-size: 6px;
+  max-width: 235px;
+  line-height: 1.2;
+  border: none;
+  position: absolute;
+  bottom: 305px;
+  right: 299px;
+}
+  
+}
+
+
+
+
+/* =========================================================================
+   ✅ ETAPA 3: DESKTOPS 1024px)
+   ========================================================================= */
+@media screen and (min-width: 1024px)  {
+
+  /* Ajustes Gerais de Layout do Site */
+  html, body, main { overflow: hidden; height: 100%; }
+  main { padding-top: 3px; justify-content: flex-start; }
+  /* ... [Mantenha seus ajustes de Header e Grid de Categorias] ... */
+  .category-grid { gap: 10px; } /* Reduz o gap */
+  .category-grid-item { flex: 0 0 250px; max-width: 250px; }
+  .category-title { bottom: -30px; font-size: 0.65rem; width: 88px; }
+  .category-title.long-title { width: 109px; bottom: -35px; font-size: 0.6rem; }
+  /* ... [Mantenha seus ajustes de Modal Galeria] ... */
+
+  /*====================================================================
+   📄 MODAL DE CRÉDITOS — DESKTOPS 1024px)
+  ======================================================================*/
+  .header-container {
+  width: 40%; 
+  }
+  .category-title {
+    bottom: -31px;
+    font-size: 0.9rem;
+    width: 115px;
+    padding: calc(10px * var(--card-scale));
+  }
+  .category-title.long-title {
+    width: 156px;
+    bottom: -41px;
+    font-size: 0.9rem;
+    }
+  .custom-popup-content {
+      /* Ajuste para telas menores deitadas */
+      width: 95vw;
+      max-width: 850px;
+      min-height: 90vh;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: 15px; /* Reduz o padding */
+     
+  }
+
+  /* Layout de Colunas (row) */
+  .popup-row {
+    flex-direction: row;
+    gap: 15px; /* Espaçamento ajustado */
+    width: 80%;
+    margin: 0 auto; /* Centraliza */
+    padding: 15px 0;
+    align-items: flex-start;
+    background: url('/assets/background.jpg') center center / cover no-repeat;
+    border: 3px solid #FFF;
+    border-radius: 10px;
+    top: 70px;
+    
+  }
+
+  .box-wrapper-creditos { width: 50%; }
+  .box-wrapper-utilizar { width: 40%; }
+  
+  /* Títulos */
+  .custom-popup-title{
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    position: relative;
+    /* Alinha o título com a borda esquerda da caixa */
+    left: -86.5px;       
+    top: 5px;
+    
+  }
+   .custom-popup-title-utilizar {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.8rem;
+    position: relative;
+    /* Alinha o título com a borda esquerda da caixa */
+    left: -27.5px;
+    top:5px;
+    
+  }
+
+
+  .custom-popup-title { width: 100px; }
+  .custom-popup-title-utilizar { width: 150px; }
+
+  /* Caixas internas */
+  .popup-caixa-creditos,
+  .popup-caixa-utilizar {
+    width: 100%;
+    height: 100%; 
+    padding: 1rem;  
+    max-height: 410px; 
+    top: 5px;
+    left: 20px;
+    right: 0;
+  }
+  
+
+  /* Textos */
+  .popup-item,
+  .creditos-texto-formatado {
+    font-size: 0.65rem;
+    line-height: 1.1;
+  }
+/* 9. Subtítulos e textos */
+.popup-subtitle {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #6D3BA9;
+  line-height: 1; 
+}
+
+
+  /* Efeitos de Borda */
+  .popup-caixa-creditos::before { width: calc(100% - 94.5px); }
+  .popup-caixa-utilizar::before { width: calc(100% - 145px); }
+
+  /* 4. Botão de fechar (X) */
+.btn-close-custom-styled {
+  position: absolute;
+  right: 66px;
+  top: 52px;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-close-custom-styled img {
+  width: 45px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================================
+   ✅ MODAL GALERIA DESKTOPS 1024px)
+   ========================================================================= */
+
+
+.image-wrapper img {
+  max-width: 95%;
+  max-height: 80vh;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  top: 20px;
+  position: relative;
+  
+}
+
+.card-description-wrapper {
+  position: absolute;
+  top: 372px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  text-align: center;
+  z-index: 10;
+  top: 451px;
+}
+
+.card-description {
+  margin: 0;
+  color: #8045DD;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 0.7em; /* Tamanho pequeno, será ajustado em breakpoints */
+  padding: 8px 12px;
+}
+
+.card-description-wrapper.long-description {
+  top: 446px;
+  
+}
+.card-description-wrapper.extra-long-description {
+  top: 436px;
+  
+}
+
+.card-title-wrapper {
+  position: absolute;
+  top: 150px; /* Posição ajustada */
+  left: 36px;
+  z-index: 10;
+  padding: 6px 12px;
+  left: 30px;
+}
+
+.card-title {
+  color: #8045DD;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+  text-shadow: none;
+  font-size: 1.5rem;
+  position: relative;
+  top: -116px;
+  left: 322px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 28px;
+  right: 290px;
+  z-index: 1055;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 50%;
+  
+}
+
+.close-btn img {
+  width: 45px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 60;
+  background: transparent !important;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: none !important;
+}
+
+.nav-arrow img {
+  width: 40px;
+  height: auto;
+}
+
+.nav-arrow.left {
+  left: 117px;
+  top: 260px;
+}
+
+.nav-arrow.right {
+  right: 117px;
+  top: 260px;
+}
+
+.nav-arrow.hide {
+  display: none !important;
+}
+
+.vertical-label {
+  position: absolute;
+  bottom: 478px;
+  right: 365px;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+  font-size: 6px;
+  max-width: 220px;
+  color: white;
+  padding: 4px 8px;
+  white-space: normal;
+  word-break: break-word;
+  text-align: left;
+  line-height: 1.3;
+}
+
+.vertical-label.long-credit {
+  background: none;
+  font-size: 6px;
+  max-width: 291px;
+  line-height: 1.2;
+  border: none;
+  position: absolute;
+  bottom: 482px;
+  right: 372px;
+  }
+  .vertical-label.extra-long-credit {
+  background: none;
+  font-size: 6px;
+  max-width: 330px;
+  line-height: 1.2;
+  border: none;
+  position: absolute;
+  bottom: 470px;
+  right: 377px;
+}
+  
+}
+/* =========================================================================
+📱 AJUSTES PARA GALAXY A55 
+======================================================================== */
+@media screen and (min-width: 376px) and (max-width: 450px){
+
+  
+  .category-grid-item { flex: 0 0 300px; max-width: 300px; }
+  .category-title { bottom: -30px; font-size: 0.65rem; width: 88px; }
+  .category-title.long-title { width: 109px; bottom: -35px; font-size: 0.6rem; }
+  /* ... [Mantenha seus ajustes de Modal Galeria] ... */
+
+  /*====================================================================
+   📄 MODAL DE CRÉDITOS —GALAXY A55 
+  ======================================================================*/
+ 
+  /* 1. Modal Dialog — Apenas container de posicionamento */
+#menuModal .modal-dialog {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('/assets/img_blackout.png') center center / cover no-repeat;
+}
+
+/* 2. Fundo blackout (imagem de fundo total) */
+#menuModal .modal-content {
+  background: none;
+  border: none;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: none;
+  padding: 0;
+  overflow: auto; 
+}
+
+/* 3. Estrutura do popup (imagem principal do conteúdo) */
+.custom-popup-content {
+  width: 90vw;
+  max-width: 900px;
+  height: auto;
+  min-height: 85vh;
+  border-radius: 12px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  transform: none; 
+}
+
+/* 4. Botão de fechar (X) */
+.btn-close-custom-styled {
+  position: absolute;
+  top: 41px;
+  right: 9px;
+  background: none;
+  border: none;
+  width: 40px;
+  height: 40px;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-close-custom-styled img {
+  width: 35px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* 5. Corpo do popup */
+.popup-body {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 6. Layout interno das seções - MOBILE FIRST (COLUNA) */
+.popup-row {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 90%; /* Usa 90% para margem interna */
+  height: auto;
+  left: 0;
+  top: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* 7. Títulos das seções - Estilos de título unificados para o Mobile First */
+
+.custom-popup-title {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #8A2BE2;
+  border: 3px solid #fff;
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  margin: 0 auto;
+  position: relative;
+  left: -31%;
+  top: 21px;
+}
+.custom-popup-title-utilizar {
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: #8A2BE2;
+  border: 3px solid #fff;
+  border-bottom: none;
+  border-radius: 15px 15px 0 0;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  margin: 0 auto;
+  position: relative;
+  /* Alinha os títulos com a borda esquerda da caixa */
+  left: -24%;
+  top: 21px;
+}
+
+
+.custom-popup-title {
+  width: 130px;
+}
+
+.custom-popup-title-utilizar {
+  width: 178px;
+}
+
+/* 8. Caixas internas */
+.popup-caixa-creditos{
+  position: relative;
+  background-color: #F9C4FC;
+  border: 3px solid #fff;
+  border-top: none;
+  border-radius: 0 15px 15px 15px;
+  color: #6D3BA9;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  overflow-y: hidden; /* Controlado por max-height/scroll abaixo */
+  box-sizing: border-box;
+  width: 100%; /* Usa 100% da largura do col-12 */
+  top: 0; 
+  left: 0; 
+  right: 0;
+  margin: 0 auto;
+  top: 20px;
+  
+}
+.popup-caixa-utilizar {
+  position: relative;
+  background-color: #F9C4FC;
+  border: 3px solid #fff;
+  border-top: none;
+  border-radius: 0 15px 15px 15px;
+  color: #6D3BA9; 
+  font-size: 0.9rem;  
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 1.2rem;
+  box-sizing: border-box;
+  width: 100%; 
+  top: 0; 
+  left: 0; 
+  right: 0;
+  margin: 0 auto;
+  top: 20px;
+}
+
+.popup-caixa-creditos {
+    /* Altura fixa para scroll em mobile (para evitar estourar a tela) */
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* 9. Subtítulos e textos */
+.popup-subtitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6D3BA9;
+ 
+}
+
+.popup-item,
+.creditos-texto-formatado {
+  font-size: 0.7rem;
+  color: #6D3BA9;
+  text-align: left;
+  margin-bottom: 0.8rem;
+  line-height: 1.1;
+}
+
+/* 10. Efeitos visuais de borda */
+.popup-caixa-creditos::before,
+.popup-caixa-utilizar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 0;
+  border-top: 3px solid #fff;
+}
+
+.popup-caixa-creditos::before { width: calc(100% - 124px); }
+.popup-caixa-utilizar::before { width: calc(100% - 172px); }
+/* =========================================================================
+   ✅ MODAL GALERIA GALAXY A55 
+   ========================================================================= */
+
+
+
+
+
+
+
+
+
+.card-description-wrapper {
+  position: absolute;
+  top: 500px; /* Posição ajustada */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  text-align: center;
+  z-index: 10;
+}
+
+.card-description {
+  margin: 0;
+  color: #8045DD;
+  font-weight: 600;
+  line-height: 1.4;
+  text-transform: uppercase;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  font-size: 0.4em; /* Tamanho pequeno, será ajustado em breakpoints */
+  padding: 8px 12px;
+}
+
+.card-description-wrapper.long-description {
+  top: 496px;
+}
+.card-description-wrapper.extra-long-description {
+  top: 494px;
+}
+
+
+.card-title-wrapper {
+  position: absolute;
+  top: 254px; /* Posição ajustada */
+  left: 43px;
+  z-index: 10;
+  padding: 6px 12px;
+}
+
+.card-title {
+  color: #8045DD;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0;
+  white-space: nowrap;
+  text-shadow: none;
+  font-size: 0.9rem;
+}
+
+.close-btn {
+  position: absolute;
+  top: 242px; /* Posição ajustada */
   right: -3px;
   z-index: 1055;
   width: 50px;
@@ -862,7 +1908,7 @@ button {
 }
 
 .close-btn img {
-  width: 30px;
+  width: 35px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
@@ -892,12 +1938,12 @@ button {
 
 .nav-arrow.left {
   left: -22px;
-  top: 287px; /* Posição ajustada */
+  top: 390px; /* Posição ajustada */
 }
 
 .nav-arrow.right {
   right: -22px;
-  top: 287px; /* Posição ajustada */
+  top: 390px; /* Posição ajustada */
 }
 
 .nav-arrow.hide {
@@ -906,7 +1952,7 @@ button {
 
 .vertical-label {
   position: absolute;
-  bottom: 440px; /* Posição ajustada */
+  bottom: 560px; /* Posição ajustada */
   right: 55px; /* Posição ajustada */
   transform: rotate(-90deg);
   transform-origin: top right;
@@ -927,8 +1973,8 @@ button {
   line-height: 1.2;
   border: none;
   position: absolute;
-  bottom: 440px; /* Posição ajustada */
-  right: 60px; /* Posição ajustada */
+  bottom: 570px; /* Posição ajustada */
+  right: 62px; /* Posição ajustada */
 }
 
 .vertical-label.extra-long-credit {
@@ -938,118 +1984,19 @@ button {
   line-height: 1.2;
   border: none;
   position: absolute;
-  bottom: 420px; /* Posição ajustada */
-  right: 75px; /* Posição ajustada */
-}
-  
+  bottom: 541px; /* Posição ajustada */
+  right: 78px; /* Posição ajustada */
 }
 
-
-/* =========================================================================
-   ✅ ETAPA 3: DESKTOPS INTERMEDIÁRIOS (901px – 1023px)
-   ========================================================================= */
-@media screen and (min-width: 901px) and (max-width:1023px) {
-
-  /* ... [Mantenha seus ajustes de Header e Grid de Categorias] ... */
-  .category-grid { gap: 40px; }
-  .category-title.long-title { width: 120px; bottom: -40px; }
-
-  /* 📄 MODAL DE CRÉDITOS — DESKTOP INTERMEDIÁRIO */
-  
-  /* Estrutura do popup */
-  .custom-popup-content {
-    width: 85vw;
-    max-width: 850px;
-    min-height: 75vh;
-    padding: 30px;
-    transform: none;
-    overflow: visible;
-  }
-  
-  /* Corpo do popup */
-  .popup-body {
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  /* Botão de Fechar */
-  .btn-close-custom-styled {
-    top: 20px;
-    right: 15px;
-  }
-
-  /* Layout de Colunas (row) */
-  .popup-row {
-    flex-direction: row;
-    gap: 20px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-    
-    /* CORREÇÃO: Usa layout fluid e borda */
-    border: 3px solid #fff;
-    background-color: hsla(271, 76%, 53%, 0.5); 
-    border-radius: 10px;
-    padding: 20px;
-    
-    /* Remoção de posicionamento fixo */
-    position: static;
-    top: 0;
-  }
-
-  .box-wrapper-creditos { width: 55%; }
-  .box-wrapper-utilizar { width: 40%; }
-  
-  /* Títulos */
-  .custom-popup-title,
-  .custom-popup-title-utilizar {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-    position: relative;
-    /* Alinha o título com a borda esquerda da caixa */
-    left: 0; 
-  }
-  .custom-popup-title { width: 110px; }
-  .custom-popup-title-utilizar { width: 160px; }
-
-  /* Caixas internas */
-  .popup-caixa-creditos,
-  .popup-caixa-utilizar {
-    width: 100%;
-    height: 100%;
-    padding: 1.5rem;
-    /* Remoção de posicionamento fixo */
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  /* Altura Máxima e Scroll */
-  .popup-caixa-creditos {
-    overflow-y: auto;
-    max-height: calc(85vh - 120px); 
-    /* CORREÇÃO: Remove a border: 1px solid red; de debug */
-    border: 3px solid #fff;
-    border-top: none;
-  }
-  .popup-caixa-utilizar {
-    overflow-y: auto;
-    max-height: calc(85vh - 120px); 
-  }
-  
-  /* Textos */
-  .popup-item,
-  .creditos-texto-formatado {
-    font-size: 0.75rem;
-    line-height: 1.4;
-  }
-
-  /* Efeitos de Borda */
-  .popup-caixa-creditos::before { width: calc(100% - 110px); }
-  .popup-caixa-utilizar::before { width: calc(100% - 160px); }
-
+.open-word-logo-global {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1056;
+  width: 80px;
+  max-width: 100px;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+}
 }
