@@ -59,7 +59,7 @@ body {
 body {
   font-family: var(--font-primary);
   color: var(--color-foreground);
-  background: #000 url("/assets/img_bg.png") center/cover no-repeat fixed;
+  background: #000 url("assets/img_bg.png") center/cover no-repeat fixed;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -232,7 +232,7 @@ BASE — MOBILE PORTRAIT (até 600px, orientação retrato)
 }
 
 #galleryModal .modal-content {
-  background: url("/assets/img_blackout.png") center center / cover no-repeat;
+  background: url("assets/img_blackout.png") center center / cover no-repeat;
   border: none;
   padding: 0;
   width: 100vw;
@@ -448,7 +448,7 @@ BASE — MOBILE PORTRAIT (até 600px, orientação retrato)
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url("/assets/img_blackout.png") center center / cover no-repeat;
+  background: url("assets/img_blackout.png") center center / cover no-repeat;
 }
 
 #menuModal .modal-content {
@@ -703,7 +703,7 @@ BASE — MOBILE PORTRAIT (até 600px, orientação retrato)
     margin: 0 auto;
     padding: 15px 0;
     align-items: flex-start;
-    background: url("/assets/background.jpg") center center / cover no-repeat;
+    background: url("assets/background.jpg") center center / cover no-repeat;
     border: 3px solid #fff;
     border-radius: 10px;
     top: 30px;
@@ -1022,7 +1022,7 @@ BASE — MOBILE PORTRAIT (até 600px, orientação retrato)
     margin: 0 auto;
     padding: 15px 0;
     align-items: flex-start;
-    background: url("/assets/background.jpg") center center / cover no-repeat;
+    background: url("assets/background.jpg") center center / cover no-repeat;
     border: 3px solid #fff;
     border-radius: 10px;
     top: 30px;
@@ -1351,7 +1351,7 @@ BASE — MOBILE PORTRAIT (até 600px, orientação retrato)
     margin: 0 auto;
     padding: 15px 0;
     align-items: flex-start;
-    background: url("/assets/background.jpg") center center / cover no-repeat;
+    background: url("assets/background.jpg") center center / cover no-repeat;
     border: 3px solid #fff;
     border-radius: 10px;
     top: 70px;
@@ -1635,7 +1635,7 @@ AJUSTES PARA GALAXY A55
     display: flex;
     align-items: center;
     justify-content: center;
-    background: url("/assets/img_blackout.png") center center / cover no-repeat;
+    background: url("assets/img_blackout.png") center center / cover no-repeat;
   }
 
   /* Fundo blackout */
