@@ -1,200 +1,308 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Universo em Galeria</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <div class="container p-0">
-    <header class="header-container mt-3">
-      <div class="header-row">
-        <button class="btn-menu" id="btnOpenCredits" aria-label="Abrir créditos" data-bs-toggle="modal" data-bs-target="#menuModal">
-          <img src="assets/icone_menu.png" alt="Menu">
-        </button>
-        <h1 class="main-title"><strong>UNIVERSO EM GALERIA</strong></h1>
-      </div>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universo em Galeria</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container p-0">
+      <header class="header-container mt-3">
+        <div class="header-row">
+          <button
+            class="btn-menu"
+            id="btnOpenCredits"
+            aria-label="Abrir créditos"
+            data-bs-toggle="modal"
+            data-bs-target="#menuModal"
+          >
+            <img src="assets/icone_menu.png" alt="Menu" />
+          </button>
+          <h1 class="main-title"><strong>UNIVERSO EM GALERIA</strong></h1>
+        </div>
+      </header>
 
-    <main class="container">
-      <div class="row category-grid justify-content-center mb-3">
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item">
-          <div class="category-card open-gallery" data-tema="galaxias">
-            <img src="assets/thumb_galaxias.png" alt="Galáxias" loading="lazy">
-            <p class="category-title">Galáxias</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item">
-          <div class="category-card open-gallery" data-tema="estrelas">
-            <img src="assets/thumb_estrelas.png" alt="Estrelas" loading="lazy">
-            <p class="category-title">Estrelas</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item">
-          <div class="category-card open-gallery" data-tema="sistemas">
-            <img src="assets/thumb_sistemas.png" alt="Sistemas Planetários" loading="lazy">
-            <p class="category-title long-title">Sistemas Planetários</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item">
-          <div class="category-card open-gallery" data-tema="planetas">
-            <img src="assets/thumb_planetas.png" alt="Planetas" loading="lazy">
-            <p class="category-title">Planetas</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row category-grid justify-content-center mt-2">
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item">
-          <div class="category-card open-gallery" data-tema="satelites">
-            <img src="assets/thumb_satelites.png" alt="Satélites Naturais" loading="lazy">
-            <p class="category-title long-title">Satélites Naturais</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item">
-          <div class="category-card open-gallery" data-tema="corpos">
-            <img src="assets/thumb_corpos.png" alt="Outros Corpos Celestiais" loading="lazy">
-            <p class="category-title long-title">Outros Corpos Celestes</p>
-          </div>
-        </div>
-        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item">
-          <div class="category-card open-gallery" data-tema="exploracao">
-            <img src="assets/thumb_explora.png" alt="Observação e Exploração" loading="lazy">
-            <p class="category-title long-title">Observação e Exploração</p>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-
-  <!-- Modal de Créditos -->
-     <div class="modal fade" id="menuModal" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true"> 
-        <div class="modal-dialog modal-xl modal-dialog-centered custom-popup-dialog">
-            <div class="modal-content custom-popup-content">
-                <button type="button" class="btn-close-custom-styled" data-bs-dismiss="modal" aria-label="Close">
-                    <img src="assets/icone_fechar.png" alt="Fechar"> 
-                </button>
-                <div class="modal-body popup-body">
-                    <div class="row popup-row">
-                        <div class="col-12 col-md-7 box-wrapper box-wrapper-creditos">
-                            <h5 class="custom-popup-title">CRÉDITOS</h5> 
-                           
-                            <div class="popup-caixa popup-caixa-creditos">
-                             
-                                <p class="popup-item direitos-autorais">© MVT Educação. Todos os direitos reservados.</p>
-                                
-                                <p class="popup-item creditos-texto-formatado">
-                                    <strong class="text-uppercase">CONCEPÇÃO PEDAGÓGICA E COORDENAÇÃO DE AUTORIA</strong> <br>
-                                    Ana Cláudia Rocha
-                                </p>
-                           
-                                <p class="popup-item creditos-texto-formatado"> 
-                                    <strong class="text-uppercase">GERENTE PEDAGÓGICA EDITORIAL</strong><br>
-                                    Marcela Machado
-                                </p>
-                              
-                                <p class="popup-item creditos-texto-formatado"> 
-                                    <strong class="text-uppercase">COORDENADORA PEDAGÓGICA</strong><br>
-                                    Juliana Fraga
-                                </p>
-                                
-                                <p class="popup-item creditos-texto-formatado">
-                                    <strong class="text-uppercase">COORDENADORA EDITORIAL</strong><br>
-                                    Juliana Maia
-                                </p>
-                                
-                                <p class="popup-item creditos-texto-formatado creditos-equipe">
-                                    <strong class="text-uppercase">EQUIPE EDITORIAL</strong><br>
-                                    Beatriz Rosa, Camila Aguiar, Fernanda Oliveira, Kaio Cassio e Mariane Parra
-                                </p>
-                                
-                                <p class="popup-item creditos-texto-formatado">
-                                    <strong class="text-uppercase">COORDENADORA DE PROJETOS DIGITAIS</strong><br>
-                                    Ariane Silvestrini
-                                </p>
-                               
-                                <p class="popup-item creditos-texto-formatado">
-                                    <strong class="text-uppercase">EQUIPE DE PROJETOS DIGITAIS</strong><br>
-                                    Toni Santos, Daniela Nascimento
-                                </p>
-                               
-                                <p class="popup-item creditos-texto-formatado">
-                                    <strong class="text-uppercase">REVISÃO ORTOGRÁFICA</strong><br>
-                                    Ana Paula de Aquino
-                                </p>
-                               
-                                <p class="popup-item creditos-texto-formatado creditos-producao">
-                                    <strong class="text-uppercase">PRODUÇÃO</strong><br>
-                                    Edivan Vicente
-                                </p>
-                                
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-5 mb-3 box-wrapper box-wrapper-utilizar">
-                         
-                            <h5 class="custom-popup-title-utilizar">COMO UTILIZAR</h5>
-                            
-                            <div class="popup-caixa popup-caixa-utilizar">
-                                <p class="popup-subtitle">Navegação Principal</p>
-                                <p class="popup-item">
-                                    Clique nas imagens (Galáxias, Estrelas, etc.) para abrir a galeria de cada tema.
-                                </p>
-                                <p class="popup-subtitle">Navegação na Galeria</p>
-                                <p class="popup-item">
-                                    Use as setas laterais (◀ ▶) ou as teclas de seta do seu teclado para percorrer as imagens do tema.
-                                </p>
-                                <p class="popup-subtitle">Fechamento</p>
-                                <p class="popup-item">
-                                    Para sair de qualquer modal, clique no ícone **X** no canto superior direito ou pressione a tecla **ESC**.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <main class="container">
+        <div class="row category-grid justify-content-center mb-3">
+          <div
+            class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item"
+          >
+            <div class="category-card open-gallery" data-tema="galaxias">
+              <img
+                src="assets/thumb_galaxias.png"
+                alt="Galáxias"
+                loading="lazy"
+              />
+              <p class="category-title">Galáxias</p>
             </div>
+          </div>
+          <div
+            class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item"
+          >
+            <div class="category-card open-gallery" data-tema="estrelas">
+              <img
+                src="assets/thumb_estrelas.png"
+                alt="Estrelas"
+                loading="lazy"
+              />
+              <p class="category-title">Estrelas</p>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item"
+          >
+            <div class="category-card open-gallery" data-tema="sistemas">
+              <img
+                src="assets/thumb_sistemas.png"
+                alt="Sistemas Planetários"
+                loading="lazy"
+              />
+              <p class="category-title long-title">Sistemas Planetários</p>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item"
+          >
+            <div class="category-card open-gallery" data-tema="planetas">
+              <img
+                src="assets/thumb_planetas.png"
+                alt="Planetas"
+                loading="lazy"
+              />
+              <p class="category-title">Planetas</p>
+            </div>
+          </div>
         </div>
+
+        <div class="row category-grid justify-content-center mt-2">
+          <div
+            class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item"
+          >
+            <div class="category-card open-gallery" data-tema="satelites">
+              <img
+                src="assets/thumb_satelites.png"
+                alt="Satélites Naturais"
+                loading="lazy"
+              />
+              <p class="category-title long-title">Satélites Naturais</p>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item"
+          >
+            <div class="category-card open-gallery" data-tema="corpos">
+              <img
+                src="assets/thumb_corpos.png"
+                alt="Outros Corpos Celestiais"
+                loading="lazy"
+              />
+              <p class="category-title long-title">Outros Corpos Celestes</p>
+            </div>
+          </div>
+          <div
+            class="col-12 col-sm-3 col-md-3 col-lg-3 mb-3 category-grid-item"
+          >
+            <div class="category-card open-gallery" data-tema="exploracao">
+              <img
+                src="assets/thumb_explora.png"
+                alt="Observação e Exploração"
+                loading="lazy"
+              />
+              <p class="category-title long-title">Observação e Exploração</p>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
 
+    <!-- Modal de Créditos -->
+    <div
+      class="modal fade"
+      id="menuModal"
+      tabindex="-1"
+      aria-labelledby="menuModalLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-xl modal-dialog-centered custom-popup-dialog"
+      >
+        <div class="modal-content custom-popup-content">
+          <button
+            type="button"
+            class="btn-close-custom-styled"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <img src="assets/icone_fechar.png" alt="Fechar" />
+          </button>
+          <div class="modal-body popup-body">
+            <div class="row popup-row">
+              <div class="col-12 col-md-7 box-wrapper box-wrapper-creditos">
+                <h5 class="custom-popup-title">CRÉDITOS</h5>
 
-  <!-- Modal da Galeria -->
-  <div class="modal fade" id="galleryModal" tabindex="-1" aria-modal="true" aria-labelledby="gallery-title">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="gallery-card" role="dialog" aria-modal="true" aria-labelledby="gallery-title">
-          <div class="card-title-wrapper">
-            <h2 class="card-title" id="gallery-title"></h2>
+                <div class="popup-caixa popup-caixa-creditos">
+                  <p class="popup-item direitos-autorais">
+                    © MVT Educação. Todos os direitos reservados.
+                  </p>
+
+                  <p class="popup-item creditos-texto-formatado">
+                    <strong class="text-uppercase"
+                      >CONCEPÇÃO PEDAGÓGICA E COORDENAÇÃO DE AUTORIA</strong
+                    >
+                    <br />
+                    Ana Cláudia Rocha
+                  </p>
+
+                  <p class="popup-item creditos-texto-formatado">
+                    <strong class="text-uppercase"
+                      >GERENTE PEDAGÓGICA EDITORIAL</strong
+                    ><br />
+                    Marcela Machado
+                  </p>
+
+                  <p class="popup-item creditos-texto-formatado">
+                    <strong class="text-uppercase"
+                      >COORDENADORA PEDAGÓGICA</strong
+                    ><br />
+                    Juliana Fraga
+                  </p>
+
+                  <p class="popup-item creditos-texto-formatado">
+                    <strong class="text-uppercase"
+                      >COORDENADORA EDITORIAL</strong
+                    ><br />
+                    Juliana Maia
+                  </p>
+
+                  <p
+                    class="popup-item creditos-texto-formatado creditos-equipe"
+                  >
+                    <strong class="text-uppercase">EQUIPE EDITORIAL</strong
+                    ><br />
+                    Beatriz Rosa, Camila Aguiar, Fernanda Oliveira, Kaio Cassio
+                    e Mariane Parra
+                  </p>
+
+                  <p class="popup-item creditos-texto-formatado">
+                    <strong class="text-uppercase"
+                      >COORDENADORA DE PROJETOS DIGITAIS</strong
+                    ><br />
+                    Ariane Silvestrini
+                  </p>
+
+                  <p class="popup-item creditos-texto-formatado">
+                    <strong class="text-uppercase"
+                      >EQUIPE DE PROJETOS DIGITAIS</strong
+                    ><br />
+                    Toni Santos, Daniela Nascimento
+                  </p>
+
+                  <p class="popup-item creditos-texto-formatado">
+                    <strong class="text-uppercase">REVISÃO ORTOGRÁFICA</strong
+                    ><br />
+                    Ana Paula de Aquino
+                  </p>
+
+                  <p
+                    class="popup-item creditos-texto-formatado creditos-producao"
+                  >
+                    <strong class="text-uppercase">PRODUÇÃO</strong><br />
+                    Edivan Vicente
+                  </p>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-5 mb-3 box-wrapper box-wrapper-utilizar"
+              >
+                <h5 class="custom-popup-title-utilizar">COMO UTILIZAR</h5>
+
+                <div class="popup-caixa popup-caixa-utilizar">
+                  <p class="popup-subtitle">Navegação Principal</p>
+                  <p class="popup-item">
+                    Clique nas imagens (Galáxias, Estrelas, etc.) para abrir a
+                    galeria de cada tema.
+                  </p>
+                  <p class="popup-subtitle">Navegação na Galeria</p>
+                  <p class="popup-item">
+                    Use as setas laterais (◀ ▶) ou as teclas de seta do seu
+                    teclado para percorrer as imagens do tema.
+                  </p>
+                  <p class="popup-subtitle">Fechamento</p>
+                  <p class="popup-item">
+                    Para sair de qualquer modal, clique no ícone **X** no canto
+                    superior direito ou pressione a tecla **ESC**.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <button class="close-btn" data-bs-dismiss="modal" aria-label="Fechar">
-            <img src="assets/icone_fechar.png" alt="Fechar">
-          </button>
-          <div class="image-wrapper">
-            <img id="main-image" src="" alt="Imagem da galeria">
-            <div class="vertical-label"></div>
-          </div>
-          <div class="card-description-wrapper">
-            <p class="card-description"></p>
-          </div>
-          <button class="nav-arrow left" aria-label="Anterior">
-            <img src="assets/icone_anterior.png" alt="Anterior">
-          </button>
-          <button class="nav-arrow right" aria-label="Próximo">
-            <img src="assets/icone_prox.png" alt="Próximo">
-          </button>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- LOGO GLOBAL -->
-  <img src="assets/img_logo.png" alt="Abre Palavra" class="open-word-logo-global">
+    <!-- Modal da Galeria -->
+    <div
+      class="modal fade"
+      id="galleryModal"
+      tabindex="-1"
+      aria-modal="true"
+      aria-labelledby="gallery-title"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div
+            class="gallery-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="gallery-title"
+          >
+            <div class="card-title-wrapper">
+              <h2 class="card-title" id="gallery-title"></h2>
+            </div>
+            <button
+              class="close-btn"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            >
+              <img src="assets/icone_fechar.png" alt="Fechar" />
+            </button>
+            <div class="image-wrapper">
+              <img id="main-image" src="" alt="Imagem da galeria" />
+              <div class="vertical-label"></div>
+            </div>
+            <div class="card-description-wrapper">
+              <p class="card-description"></p>
+            </div>
+            <button class="nav-arrow left" aria-label="Anterior">
+              <img src="assets/icone_anterior.png" alt="Anterior" />
+            </button>
+            <button class="nav-arrow right" aria-label="Próximo">
+              <img src="assets/icone_prox.png" alt="Próximo" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
-</body>
+    <!-- LOGO GLOBAL -->
+    <img
+      src="assets/img_logo.png"
+      alt="Abre Palavra"
+      class="open-word-logo-global"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
