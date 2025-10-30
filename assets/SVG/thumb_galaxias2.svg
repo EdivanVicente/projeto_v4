@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 348.8 378.83">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+        opacity: .95;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        mask: url(#mask);
+      }
+
+      .cls-5 {
+        fill: none;
+      }
+
+      .cls-6 {
+        fill: #854ef5;
+      }
+
+      .cls-7 {
+        isolation: isolate;
+      }
+
+      .cls-8 {
+        mix-blend-mode: screen;
+      }
+
+      .cls-3 {
+        font-family: OpenSans-Bold, 'Open Sans';
+        font-size: 25px;
+        font-weight: 700;
+      }
+
+      .cls-9 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <filter id="luminosity-noclip" x="7.09" y="-14535.83" width="335" height="32766" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask" x="7.09" y="-14535.83" width="335" height="32766" maskUnits="userSpaceOnUse"/>
+    <clipPath id="clippath">
+      <rect class="cls-5" x="7.09" y="7.09" width="335" height="335" rx="20" ry="20"/>
+    </clipPath>
+  </defs>
+  <g class="cls-7">
+    <g id="Camada_2" data-name="Camada 2">
+      <g id="Quadros_galeria" data-name="Quadros galeria">
+        <g class="cls-4">
+          <rect class="cls-1" x="7.09" y="9.09" width="335" height="335" rx="20" ry="20"/>
+        </g>
+        <path class="cls-2" d="M322.09,9.09c11.05,0,20,8.95,20,20v295c0,11.05-8.95,20-20,20H27.09c-11.05,0-20-8.95-20-20V29.09c0-11.05,8.95-20,20-20h295M322.09,4.09H27.09C13.3,4.09,2.09,15.3,2.09,29.09v295c0,13.79,11.21,25,25,25h295c13.79,0,25-11.21,25-25V29.09c0-13.79-11.21-25-25-25h0Z"/>
+      </g>
+      <g id="Imagens_galeria" data-name="Imagens galeria">
+        <g class="cls-9">
+          <image class="cls-8" width="5600" height="5600" transform="scale(.06)" xlink:href="../../../ABP_MVT_G4_1B_INFO_CASINHA/ABP_MVT_2ANO_2B_INFO_UNIVERSO_V3_Pasta/Links/ABP_MVT_2ANO_2B_INFO_UNIVERSO_FOTO_033.jpg"/>
+        </g>
+      </g>
+      <g id="Titulo_galeria" data-name="Titulo galeria">
+        <g>
+          <rect class="cls-6" x="90.59" y="317.33" width="173" height="59" rx="12.5" ry="12.5"/>
+          <path class="cls-2" d="M251.09,319.83c5.52,0,10,4.48,10,10v34c0,5.52-4.48,10-10,10H103.09c-5.52,0-10-4.48-10-10v-34c0-5.52,4.48-10,10-10h148M251.09,314.83H103.09c-8.27,0-15,6.73-15,15v34c0,8.27,6.73,15,15,15h148c8.27,0,15-6.73,15-15v-34c0-8.27-6.73-15-15-15h0Z"/>
+        </g>
+      </g>
+      <g id="Textos_galeria" data-name="Textos galeria">
+        <g>
+          <rect class="cls-6" x="90.59" y="316.83" width="173" height="59" rx="12.5" ry="12.5"/>
+          <path class="cls-2" d="M251.09,319.33c5.52,0,10,4.48,10,10v34c0,5.52-4.48,10-10,10H103.09c-5.52,0-10-4.48-10-10v-34c0-5.52,4.48-10,10-10h148M251.09,314.33H103.09c-8.27,0-15,6.73-15,15v34c0,8.27,6.73,15,15,15h148c8.27,0,15-6.73,15-15v-34c0-8.27-6.73-15-15-15h0Z"/>
+        </g>
+        <text class="cls-3" transform="translate(115.74 357.04)"><tspan x="0" y="0">GALÁXIAS</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

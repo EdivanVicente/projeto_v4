@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 64">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: #854ef5;
+      }
+
+      .cls-2 {
+        font-family: OpenSans-Bold, 'Open Sans';
+        font-size: 25px;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <g id="Textos_galeria" data-name="Textos galeria">
+    <g>
+      <rect class="cls-3" x="2.5" y="2.5" width="173" height="59" rx="12.5" ry="12.5"/>
+      <path class="cls-1" d="M163,5c5.52,0,10,4.48,10,10v34c0,5.52-4.48,10-10,10H15c-5.52,0-10-4.48-10-10V15c0-5.52,4.48-10,10-10h148M163,0H15C6.73,0,0,6.73,0,15v34c0,8.27,6.73,15,15,15h148c8.27,0,15-6.73,15-15V15c0-8.27-6.73-15-15-15h0Z"/>
+    </g>
+    <text class="cls-2" transform="translate(27.65 42.71)"><tspan x="0" y="0">GALÁXIAS</tspan></text>
+  </g>
+</svg>
