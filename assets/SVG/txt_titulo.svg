@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 683.67 82.1">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
+        font-family: OpenSans-ExtraBold, 'Open Sans';
+        font-size: 57.71px;
+        font-weight: 700;
+      }
+
+      .cls-2 {
+        fill: #4f657a;
+        mix-blend-mode: multiply;
+      }
+
+      .cls-3 {
+        isolation: isolate;
+      }
+    </style>
+  </defs>
+  <g class="cls-3">
+    <g id="Camada_2" data-name="Camada 2">
+      <g id="Logo">
+        <text class="cls-2" transform="translate(6.67 55.49)"><tspan x="0" y="0">UNIVERSO EM GALERIA</tspan></text>
+        <text class="cls-1" transform="translate(7.23 49.45)"><tspan x="0" y="0">UNIVERSO EM GALERIA</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

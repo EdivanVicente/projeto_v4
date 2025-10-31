@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 345 346">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+        opacity: .95;
+      }
+
+      .cls-2 {
+        mask: url(#mask-1);
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+
+      .cls-4 {
+        mask: url(#mask);
+      }
+
+      .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-6 {
+        mix-blend-mode: screen;
+      }
+    </style>
+    <filter id="luminosity-noclip" x="5" y="-14107.44" width="335" height="32766" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask" x="5" y="-14107.44" width="335" height="32766" maskUnits="userSpaceOnUse"/>
+    <filter id="luminosity-noclip-2" x="4.89" y="-14107.44" width="335" height="32766" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask-1" x="4.89" y="-14107.44" width="335" height="32766" maskUnits="userSpaceOnUse"/>
+  </defs>
+  <g class="cls-5">
+    <g id="Camada_2" data-name="Camada 2">
+      <g id="Quadros_galeria" data-name="Quadros galeria">
+        <g class="cls-4">
+          <rect class="cls-1" x="5" y="5" width="335" height="335" rx="20" ry="20"/>
+        </g>
+        <path class="cls-3" d="M320,5c11.05,0,20,8.95,20,20v295c0,11.05-8.95,20-20,20H25c-11.05,0-20-8.95-20-20V25C5,13.95,13.95,5,25,5h295M320,0H25C11.21,0,0,11.21,0,25v295c0,13.79,11.21,25,25,25h295c13.79,0,25-11.21,25-25V25c0-13.79-11.21-25-25-25h0Z"/>
+      </g>
+      <g id="Imagens_galeria" data-name="Imagens galeria">
+        <g class="cls-2">
+          <rect class="cls-6" x="4.89" y="11" width="335" height="335" rx="20" ry="20"/>
+        </g>
+        <image class="cls-6" width="560" height="560" transform="translate(30.15 29.58) scale(.5)" xlink:href="../../../ABP_MVT_G4_1B_INFO_CASINHA/ABP_MVT_2ANO_2B_INFO_UNIVERSO_V3_Pasta/Links/ABP_MVT_2ANO_2B_INFO_UNIVERSO_FOTO_025.jpg"/>
+      </g>
+    </g>
+  </g>
+</svg>

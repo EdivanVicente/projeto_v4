@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 563.67 345">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1d1d1b;
+        opacity: .95;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        mask: url(#mask);
+      }
+
+      .cls-4 {
+        fill: none;
+      }
+
+      .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-6 {
+        mix-blend-mode: screen;
+      }
+
+      .cls-7 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <filter id="luminosity-noclip" x="130.71" y="-14107.44" width="335" height="32766" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feFlood flood-color="#fff" result="bg"/>
+      <feBlend in="SourceGraphic" in2="bg"/>
+    </filter>
+    <mask id="mask" x="130.71" y="-14107.44" width="335" height="32766" maskUnits="userSpaceOnUse"/>
+    <clipPath id="clippath">
+      <rect class="cls-4" x="130.71" y="5" width="335" height="335" rx="20" ry="20"/>
+    </clipPath>
+  </defs>
+  <g class="cls-5">
+    <g id="Camada_2" data-name="Camada 2">
+      <g id="Quadros_galeria" data-name="Quadros galeria">
+        <g class="cls-3">
+          <rect class="cls-1" x="130.71" y="5" width="335" height="335" rx="20" ry="20"/>
+        </g>
+        <path class="cls-2" d="M445.71,5c11.05,0,20,8.95,20,20v295c0,11.05-8.95,20-20,20H150.71c-11.05,0-20-8.95-20-20V25c0-11.05,8.95-20,20-20h295M445.71,0H150.71c-13.79,0-25,11.21-25,25v295c0,13.79,11.21,25,25,25h295c13.79,0,25-11.21,25-25V25c0-13.79-11.21-25-25-25h0Z"/>
+      </g>
+      <g id="Imagens_galeria" data-name="Imagens galeria">
+        <g class="cls-7">
+          <image class="cls-6" width="5324" height="3204" transform="translate(0 2.06) scale(.11)" xlink:href="../../../ABP_MVT_G4_1B_INFO_CASINHA/ABP_MVT_2ANO_2B_INFO_UNIVERSO_V3_Pasta/Links/ABP_MVT_2ANO_2B_INFO_UNIVERSO_FOTO_038.png"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
